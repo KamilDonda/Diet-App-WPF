@@ -27,3 +27,8 @@ C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3
 C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\Pages\SettingsPage.baml
 C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\Pages\MealsPage.g.cs
 C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\Pages\MealsPage.baml
+C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\OneDay.g.cs
+C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\Pages\DietPage.g.cs
+C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\OneDay.baml
+C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\Pages\DietPage.baml
+C:\Users\donda\Desktop\Projekt-Semestralny\Projekt\Projekt\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs

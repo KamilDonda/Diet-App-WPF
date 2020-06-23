@@ -65,7 +65,9 @@ namespace Projekt
 
         private void Diet_button_Click(object sender, RoutedEventArgs e)
         {
-
+            PageList.Add(Main.Content);
+            Main.Content = new DietPage();
+            label.Content = PageList.Count;
         }
 
         private void Settings_button_Click(object sender, RoutedEventArgs e)

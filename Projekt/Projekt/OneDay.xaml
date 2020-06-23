@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Projekt.OneDay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Projekt"
+             mc:Ignorable="d" 
+             d:DesignHeight="600"
+             d:DesignWidth="700"
+             Background="White">
+
+    <Grid>
+
+        <StackPanel Orientation="Vertical">
+
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="5"
+                       x:Name="Day_textblock"
+                       Text="Poniedziałek"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Margin="20"/>
+
+            <DataGrid AutoGenerateColumns="False" 
+                  Name="Day_datagrid" 
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  FontSize="30">
+                <DataGrid.Columns>
+                    <DataGridTextColumn MinWidth="60" Header="Posiłek"/>
+                    <DataGridTextColumn MinWidth="60" Header="Białko"/>
+                    <DataGridTextColumn MinWidth="60" Header="Węglowodany"/>
+                    <DataGridTextColumn MinWidth="60" Header="Tłuszcze"/>
+                    <DataGridTextColumn MinWidth="60" Header="Kcal"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            --><!-- Day --><!--
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="5"
+                       x:Name="Day_textblock"
+                       Text="Poniedziałek"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"/>
+
+            --><!-- Meal --><!--
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Posiłek"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"/>
+
+            --><!-- Proteins --><!--
+            <TextBlock Grid.Row="1" Grid.Column="1"
+                       Text="Białko"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"/>
+
+            --><!-- Fat --><!--
+            <TextBlock Grid.Row="1" Grid.Column="2"
+                       Text="Tłuszcz"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"/>
+
+            --><!-- Carbohydrates --><!--
+            <TextBlock Grid.Row="1" Grid.Column="3"
+                       Text="Węglowodany"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"/>
+
+            --><!-- Kcal --><!--
+            <TextBlock Grid.Row="1" Grid.Column="4"
+                       Text="Kcal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="10"/>
+
+        </Grid>-->
+    </Grid>
+    
+</UserControl>

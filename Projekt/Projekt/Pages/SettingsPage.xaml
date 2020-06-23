@@ -23,15 +23,16 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
@@ -172,8 +173,22 @@
                         </Viewbox>
                     </StackPanel>
 
+                    <!-- Count of meals -->
+                    <TextBlock Grid.Column="0" Grid.Row="9"
+                               Text="Preferowana liczba posiłków"
+                               FontSize="20"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+                    <ComboBox Grid.Column="1" Grid.Row="9"
+                                  x:Name="MealsCount_combobox"
+                                  FontSize="20"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Center"
+                                  Width="100">
+                    </ComboBox>
+
                     <!-- BMI & BMR & TMR -->
-                    <StackPanel Grid.Row="9" Grid.ColumnSpan="2"
+                    <StackPanel Grid.Row="10" Grid.ColumnSpan="2"
                                 Margin="0,30,0,0">
                         <Grid>
                             <Grid.ColumnDefinitions>
