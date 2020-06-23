@@ -1,7 +1,9 @@
 ﻿using Projekt.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +27,7 @@ namespace Projekt
         }
 
         private List<Object> PageList = new List<Object>();
+        private string url = $"https://github.com/KamilDonda/Projekt-Semestralny";
 
         #region Buttons
 
@@ -74,7 +77,7 @@ namespace Projekt
 
         private void GitHub_button_Click(object sender, RoutedEventArgs e)
         {
-
+            Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
         }
 
         private void Exit_button_Click(object sender, RoutedEventArgs e)
