@@ -8,6 +8,7 @@
         Title="MainWindow"
         Height="800"
         Width="1000"
+        xmlns:resx="clr-namespace:Projekt.Properties"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
@@ -32,7 +33,7 @@
                         <Image  Source="Images/back.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Back_textblock"
-                                    Text="Wstecz"
+                                    Text="{x:Static resx:Resources.back}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>
@@ -48,7 +49,7 @@
                         <Image  Source="Images/login.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Login_textblock"
-                                    Text="Zaloguj się"
+                                    Text="{x:Static resx:Resources.showLogin}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>
@@ -64,7 +65,7 @@
                         <Image  Source="Images/ingredients.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Ingredient_textblock"
-                                    Text="Pokaż produkty"
+                                    Text="{x:Static resx:Resources.showIngredients}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>
@@ -79,7 +80,7 @@
                         <Image  Source="Images/meals.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Meals_textblock"
-                                    Text="Pokaż posiłki"
+                                    Text="{x:Static resx:Resources.showMeals}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>
@@ -94,7 +95,7 @@
                         <Image  Source="Images/diet.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Diet_textblock"
-                                    Text="Moja dieta"
+                                    Text="{x:Static resx:Resources.showDiet}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>
@@ -109,7 +110,7 @@
                         <Image  Source="Images/settings.png"
                                 Stretch="None"/>
                         <TextBlock  x:Name="Settings_textblock"
-                                    Text="Ustawienia"
+                                    Text="{x:Static resx:Resources.showSettings}"
                                     HorizontalAlignment="Center"
                                     FontSize="20"/>
                     </StackPanel>

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Projekt.Pages"
+      xmlns:resx="clr-namespace:Projekt.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="750"
       d:DesignWidth="820"
@@ -38,7 +39,7 @@
 
                     <!-- Name -->
                     <TextBlock Grid.Column="0" Grid.Row="0"
-                                   Text="Imię"
+                                   Text="{x:Static resx:Resources.name}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <TextBox   Grid.Column="1" Grid.Row="0"
@@ -52,7 +53,7 @@
 
                     <!-- Surname -->
                     <TextBlock Grid.Column="0" Grid.Row="1"
-                                   Text="Nazwisko"
+                                   Text="{x:Static resx:Resources.surname}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <TextBox   Grid.Column="1" Grid.Row="1"
@@ -66,23 +67,23 @@
 
                     <!-- Sex -->
                     <TextBlock Grid.Column="0" Grid.Row="2"
-                                   Text="Płeć"
+                                   Text="{x:Static resx:Resources.sex}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Grid.Row="2"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
                         <Viewbox Height="25">
-                            <RadioButton GroupName="Sex" Content="Kobieta"/>
+                            <RadioButton GroupName="Sex" Content="{x:Static resx:Resources.woman}"/>
                         </Viewbox>
                         <Viewbox Height="25" Margin="20,0,0,0">
-                            <RadioButton GroupName="Sex" Content="Mężczyzna"/>
+                            <RadioButton GroupName="Sex" Content="{x:Static resx:Resources.man}"/>
                         </Viewbox>
                     </StackPanel>
 
                     <!-- Age -->
                     <TextBlock Grid.Column="0" Grid.Row="3"
-                                   Text="Wiek"
+                                   Text="{x:Static resx:Resources.age}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <TextBox   Grid.Column="1" Grid.Row="3"
@@ -97,7 +98,7 @@
 
                     <!-- Height -->
                     <TextBlock Grid.Column="0" Grid.Row="4"
-                                   Text="Wzrost [cm]"
+                                   Text="{x:Static resx:Resources.height}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <TextBox   Grid.Column="1" Grid.Row="4"
@@ -112,7 +113,7 @@
 
                     <!-- Weight -->
                     <TextBlock Grid.Column="0" Grid.Row="5"
-                                   Text="Waga [kg]"
+                                   Text="{x:Static resx:Resources.weight}"
                                    FontSize="20"
                                    VerticalAlignment="Center"/>
                     <TextBox   Grid.Column="1" Grid.Row="5"
@@ -127,7 +128,7 @@
 
                     <!-- Activity level -->
                     <TextBlock Grid.Column="0" Grid.Row="6"
-                                   Text="Poziom aktywności"
+                                   Text="{x:Static resx:Resources.activityLevel}"
                                    FontSize="20"
                                    TextWrapping="Wrap"
                                    VerticalAlignment="Center"/>
@@ -141,7 +142,7 @@
 
                     <!-- Goal -->
                     <TextBlock Grid.Column="0" Grid.Row="7"
-                                   Text="Cel"
+                                   Text="{x:Static resx:Resources.goal}"
                                    FontSize="20"
                                    TextWrapping="Wrap"
                                    VerticalAlignment="Center"/>
@@ -155,7 +156,7 @@
 
                     <!-- Diet -->
                     <TextBlock Grid.Column="0" Grid.Row="8"
-                               Text="Dieta"
+                               Text="{x:Static resx:Resources.diet}"
                                FontSize="20"
                                TextWrapping="Wrap"
                                VerticalAlignment="Center"/>
@@ -163,19 +164,19 @@
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
                         <Viewbox Height="25">
-                            <RadioButton GroupName="Type" Content="Zwykła"/>
+                            <RadioButton GroupName="Type" Content="{x:Static resx:Resources.normal}"/>
                         </Viewbox>
                         <Viewbox Height="25" Margin="10,0,0,0">
-                            <RadioButton GroupName="Type" Content="Wegetariańska"/>
+                            <RadioButton GroupName="Type" Content="{x:Static resx:Resources.vegetarian}"/>
                         </Viewbox>
                         <Viewbox Height="25" Margin="10,0,0,0">
-                            <RadioButton GroupName="Type" Content="Wegańska"/>
+                            <RadioButton GroupName="Type" Content="{x:Static resx:Resources.vegan}"/>
                         </Viewbox>
                     </StackPanel>
 
                     <!-- Count of meals -->
                     <TextBlock Grid.Column="0" Grid.Row="9"
-                               Text="Preferowana liczba posiłków"
+                               Text="{x:Static resx:Resources.mealsCount}"
                                FontSize="20"
                                TextWrapping="Wrap"
                                VerticalAlignment="Center"/>
@@ -203,7 +204,7 @@
 
                             <!-- BMI -->
                             <TextBlock Grid.Column="0" Grid.Row="0"
-                                       Text="BMI"
+                                       Text="{x:Static resx:Resources.bmi}"
                                        FontSize="30"
                                        VerticalAlignment="Center"
                                        TextAlignment="Center"/>
@@ -215,7 +216,7 @@
 
                             <!-- BMR -->
                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                       Text="BMR [kcal]"
+                                       Text="{x:Static resx:Resources.bmr}"
                                        FontSize="30"
                                        VerticalAlignment="Center"
                                        TextAlignment="Center"/>
@@ -227,7 +228,7 @@
 
                             <!-- TMR -->
                             <TextBlock Grid.Column="2" Grid.Row="0"
-                                       Text="TMR [kcal]"
+                                       Text="{x:Static resx:Resources.tmr}"
                                        FontSize="30"
                                        VerticalAlignment="Center"
                                        TextAlignment="Center"/>

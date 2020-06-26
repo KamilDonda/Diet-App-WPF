@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Projekt"
+      xmlns:resx="clr-namespace:Projekt.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="750"
       d:DesignWidth="820"
@@ -21,7 +22,7 @@
             <StackPanel Width="500">
 
                 <TextBlock x:Name="LoginTitle_textblock" 
-                           Text="Zaloguj się"
+                           Text="{x:Static resx:Resources.showLogin}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontSize="60"/>
@@ -33,7 +34,7 @@
                 <!-- Login -->
                 <StackPanel Width="300">
 
-                    <TextBlock Text="Login"
+                    <TextBlock Text="{x:Static resx:Resources.login}"
                                VerticalAlignment="Center"
                                FontSize="35"/>
 
@@ -42,7 +43,7 @@
 
                         <TextBox x:Name="Login_textbox"
                                  Padding="10"
-                                 Text="jkowalski90"
+                                 Text=""
                                  FontSize="25"
                                  Width="250"
                                  VerticalAlignment="Center"
@@ -64,9 +65,9 @@
                 <StackPanel Width="300"
                             Margin="0,50,0,0">
 
-                    <TextBlock Text="Hasło"
-                           VerticalAlignment="Center"
-                           FontSize="35"/>
+                    <TextBlock Text="{x:Static resx:Resources.password}"
+                               VerticalAlignment="Center"
+                               FontSize="35"/>
 
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,10,0,0">
@@ -95,7 +96,7 @@
                         HorizontalAlignment="Center"
                         BorderThickness="0"
                         Padding="0"
-                        Content="Utwórz konto!"
+                        Content="{x:Static resx:Resources.createAccount}"
                         FontSize="30"
                         Foreground="#66757F"
                         Margin="0,50,0,0" Click="Button_Click"/>

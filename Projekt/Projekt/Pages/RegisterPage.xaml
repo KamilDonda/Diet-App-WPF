@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Projekt.Pages"
+      xmlns:resx="clr-namespace:Projekt.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="750"
       d:DesignWidth="820"
@@ -21,7 +22,7 @@
             <StackPanel Width="500">
 
                 <TextBlock x:Name="RegisterTitle_textblock" 
-                           Text="Utwórz konto"
+                           Text="{x:Static resx:Resources.createAccount}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontSize="50"/>
@@ -33,7 +34,7 @@
                 <!-- Login -->
                 <StackPanel Width="300">
 
-                    <TextBlock Text="Login"
+                    <TextBlock Text="{x:Static resx:Resources.login}"
                                VerticalAlignment="Center"
                                FontSize="30"/>
 
@@ -42,7 +43,7 @@
 
                         <TextBox x:Name="Login_textbox"
                                  Padding="10"
-                                 Text="jkowalski90"
+                                 Text=""
                                  FontSize="20"
                                  Width="250"
                                  VerticalAlignment="Center"
@@ -64,7 +65,7 @@
                 <StackPanel Width="300"
                             Margin="0,50,0,0">
 
-                    <TextBlock Text="Hasło"
+                    <TextBlock Text="{x:Static resx:Resources.password}"
                            VerticalAlignment="Center"
                            FontSize="30"/>
 
@@ -94,7 +95,7 @@
                 <StackPanel Width="300"
                             Margin="0,50,0,0">
 
-                    <TextBlock Text="Powtórz hasło"
+                    <TextBlock Text="{x:Static resx:Resources.confirmPassword}"
                            VerticalAlignment="Center"
                            FontSize="30"/>
 
