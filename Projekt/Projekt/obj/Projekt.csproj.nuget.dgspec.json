@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {}
+    "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {
+    "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+        "projectUniqueName": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
         "projectName": "Projekt",
-        "projectPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
-        "packagesPath": "C:\\Users\\curio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
+        "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+        "packagesPath": "C:\\Users\\donda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\curio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\donda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,12 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "MySql.Data": {
-              "target": "Package",
-              "version": "[8.0.20, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
