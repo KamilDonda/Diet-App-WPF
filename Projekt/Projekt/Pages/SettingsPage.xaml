@@ -166,10 +166,10 @@
                             <RadioButton GroupName="Type" Content="Zwykła"/>
                         </Viewbox>
                         <Viewbox Height="25" Margin="10,0,0,0">
-                            <RadioButton GroupName="Type" Content="Wegańska"/>
+                            <RadioButton GroupName="Type" Content="Wegetariańska"/>
                         </Viewbox>
                         <Viewbox Height="25" Margin="10,0,0,0">
-                            <RadioButton GroupName="Type" Content="Wegetariańska"/>
+                            <RadioButton GroupName="Type" Content="Wegańska"/>
                         </Viewbox>
                     </StackPanel>
 

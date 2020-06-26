@@ -24,6 +24,9 @@ namespace Projekt
         {
             InitializeComponent();
             MouseDown += Window_MouseDown;
+
+            Main.Content = new LoginPage();
+            //PageList.Add(Main.Content);
         }
 
         private List<Object> PageList = new List<Object>();
@@ -35,8 +38,8 @@ namespace Projekt
         {
             if (PageList.Count > 1)
             {
-                PageList.Remove(Main.Content);
-                Main.Content = PageList.ElementAt(PageList.Count - 1);
+                PageList.Remove(PageList.Last());
+                Main.Content = PageList.Last();
                 
                 label.Content = PageList.Count;
             }
@@ -44,37 +47,27 @@ namespace Projekt
 
         private void Login_button_Click(object sender, RoutedEventArgs e)
         {
-            PageList.Add(Main.Content);
-            Main.Content = new LoginPage();
-            label.Content = PageList.Count;
+            NewPage(new LoginPage());
         }
 
         private void Ingredients_button_Click(object sender, RoutedEventArgs e)
         {
-            PageList.Add(Main.Content);
-            Main.Content = new IngredientsPage();
-            label.Content = PageList.Count;
+            NewPage(new IngredientsPage());
         }
 
         private void Meals_button_Click(object sender, RoutedEventArgs e)
         {
-            PageList.Add(Main.Content);
-            Main.Content = new MealsPage();
-            label.Content = PageList.Count;
+            NewPage(new MealsPage());
         }
 
         private void Diet_button_Click(object sender, RoutedEventArgs e)
         {
-            PageList.Add(Main.Content);
-            Main.Content = new DietPage();
-            label.Content = PageList.Count;
+            NewPage(new DietPage());
         }
 
         private void Settings_button_Click(object sender, RoutedEventArgs e)
         {
-            PageList.Add(Main.Content);
-            Main.Content = new SettingsPage();
-            label.Content = PageList.Count;
+            NewPage(new SettingsPage());
         }
 
         private void GitHub_button_Click(object sender, RoutedEventArgs e)
@@ -104,5 +97,14 @@ namespace Projekt
 
         #endregion
 
+        private void NewPage(Page newPage)
+        {
+            if (newPage.ToString() != Main.Content.ToString())
+            {
+                PageList.Add(Main.Content);
+                Main.Content = newPage;
+                label.Content = PageList.Count;
+            }
+        }
     }
 }
