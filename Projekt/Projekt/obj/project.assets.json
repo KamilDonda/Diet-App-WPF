@@ -1798,6 +1798,7 @@
       "path": "microsoft.csharp/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2874,6 +2875,7 @@
       "path": "system.dynamic.runtime/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3618,6 +3620,7 @@
       "path": "system.net.nameresolution/4.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5832,6 +5835,7 @@
       "path": "system.xml.xmldocument/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5947,23 +5951,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\curio\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\donda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+      "projectUniqueName": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
       "projectName": "Projekt",
-      "projectPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
-      "packagesPath": "C:\\Users\\curio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
+      "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+      "packagesPath": "C:\\Users\\donda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\curio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\donda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
