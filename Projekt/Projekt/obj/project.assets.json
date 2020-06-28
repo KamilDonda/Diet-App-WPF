@@ -5951,19 +5951,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\donda\\.nuget\\packages\\": {}
+    "C:\\Users\\curio\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+      "projectUniqueName": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
       "projectName": "Projekt",
-      "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
-      "packagesPath": "C:\\Users\\donda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
+      "projectPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+      "packagesPath": "C:\\Users\\curio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\curio\\OneDrive\\Dokumenty\\GitHub\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\donda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\curio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
