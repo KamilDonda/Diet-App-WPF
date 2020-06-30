@@ -70,6 +70,51 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Bardzo niski / brak.
+        /// </summary>
+        public static string activityLevel0 {
+            get {
+                return ResourceManager.GetString("activityLevel0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Niski.
+        /// </summary>
+        public static string activityLevel1 {
+            get {
+                return ResourceManager.GetString("activityLevel1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Średni.
+        /// </summary>
+        public static string activityLevel2 {
+            get {
+                return ResourceManager.GetString("activityLevel2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Wysoki.
+        /// </summary>
+        public static string activityLevel3 {
+            get {
+                return ResourceManager.GetString("activityLevel3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Bardzo wysoki.
+        /// </summary>
+        public static string activityLevel4 {
+            get {
+                return ResourceManager.GetString("activityLevel4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Wiek.
         /// </summary>
         public static string age {
@@ -124,6 +169,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Zapotrzebowanie dzienne [Kcal].
+        /// </summary>
+        public static string dailyCalories {
+            get {
+                return ResourceManager.GetString("dailyCalories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dieta.
         /// </summary>
         public static string diet {
@@ -133,11 +187,47 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nie wszystkie dane są poprawnie wypełnione!.
+        /// </summary>
+        public static string errorEmptyDatas {
+            get {
+                return ResourceManager.GetString("errorEmptyDatas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Cel.
         /// </summary>
         public static string goal {
             get {
                 return ResourceManager.GetString("goal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Schudnięcie.
+        /// </summary>
+        public static string goal0 {
+            get {
+                return ResourceManager.GetString("goal0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Utrzymanie wagi.
+        /// </summary>
+        public static string goal1 {
+            get {
+                return ResourceManager.GetString("goal1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Zwiększenie masy ciała.
+        /// </summary>
+        public static string goal2 {
+            get {
+                return ResourceManager.GetString("goal2", resourceCulture);
             }
         }
         
@@ -291,6 +381,15 @@ namespace Projekt.Properties {
         public static string vegetarian {
             get {
                 return ResourceManager.GetString("vegetarian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Ostrzeżenie!.
+        /// </summary>
+        public static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
             }
         }
         

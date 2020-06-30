@@ -120,6 +120,21 @@
   <data name="activityLevel" xml:space="preserve">
     <value>Poziom aktywności</value>
   </data>
+  <data name="activityLevel0" xml:space="preserve">
+    <value>Bardzo niski / brak</value>
+  </data>
+  <data name="activityLevel1" xml:space="preserve">
+    <value>Niski</value>
+  </data>
+  <data name="activityLevel2" xml:space="preserve">
+    <value>Średni</value>
+  </data>
+  <data name="activityLevel3" xml:space="preserve">
+    <value>Wysoki</value>
+  </data>
+  <data name="activityLevel4" xml:space="preserve">
+    <value>Bardzo wysoki</value>
+  </data>
   <data name="age" xml:space="preserve">
     <value>Wiek</value>
   </data>
@@ -138,11 +153,26 @@
   <data name="createAccount" xml:space="preserve">
     <value>Utwórz konto</value>
   </data>
+  <data name="dailyCalories" xml:space="preserve">
+    <value>Zapotrzebowanie dzienne [Kcal]</value>
+  </data>
   <data name="diet" xml:space="preserve">
     <value>Dieta</value>
   </data>
+  <data name="errorEmptyDatas" xml:space="preserve">
+    <value>Nie wszystkie dane są poprawnie wypełnione!</value>
+  </data>
   <data name="goal" xml:space="preserve">
     <value>Cel</value>
+  </data>
+  <data name="goal0" xml:space="preserve">
+    <value>Schudnięcie</value>
+  </data>
+  <data name="goal1" xml:space="preserve">
+    <value>Utrzymanie wagi</value>
+  </data>
+  <data name="goal2" xml:space="preserve">
+    <value>Zwiększenie masy ciała</value>
   </data>
   <data name="height" xml:space="preserve">
     <value>Wzrost [cm]</value>
@@ -194,6 +224,9 @@
   </data>
   <data name="vegetarian" xml:space="preserve">
     <value>Wegetariańska</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Ostrzeżenie!</value>
   </data>
   <data name="weight" xml:space="preserve">
     <value>Waga [kg]</value>
