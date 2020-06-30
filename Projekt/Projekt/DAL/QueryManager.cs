@@ -12,7 +12,7 @@ namespace Projekt.DAL
         {
             get => IngredientsRepos.GetAllIngredients();
         }
-        public List<Meals> Meals
+        public List<Entities.Meals> Meals
         {
             get => MealsRepos.GetAllMeals();
         }

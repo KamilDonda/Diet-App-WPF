@@ -11,9 +11,9 @@ namespace Projekt.DAL.Repositories
         //Komenda wypisująca polecenie MySQL
         private const string ALL_MEALS_QUERY = "SELECT * FROM MEALS";
 
-        public static List<Meals> GetAllMeals()
+        public static List<Entities.Meals> GetAllMeals()
         {
-            List<Meals> meals = new List<Meals>();
+            List<Entities.Meals> meals = new List<Entities.Meals>();
             try
             {
                 using (var connection = DBConnection.Instance.Connection)
@@ -22,7 +22,7 @@ namespace Projekt.DAL.Repositories
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
-                        meals.Add(new Meals(dataReader));
+                        meals.Add(new Entities.Meals(dataReader));
                     connection.Close();
                 }
             }

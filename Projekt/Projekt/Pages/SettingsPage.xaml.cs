@@ -17,9 +17,6 @@ using System.Linq;
 
 namespace Projekt.Pages
 {
-    /// <summary>
-    /// Logika interakcji dla klasy SettingsPage.xaml
-    /// </summary>
     public partial class SettingsPage : Page
     {
         #region Properties
@@ -117,9 +114,21 @@ namespace Projekt.Pages
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        private bool SexCheck 
+            => man_radiobutton.IsChecked == true;
+
+        private int DietCheck()
+        {
+            if (vegetarian_radiobutton.IsChecked == true)
+                return 1;
+            if (vegan_radiobutton.IsChecked == true)
+                return 2;
+            return 0;
+        }
+
         private void show()
         {
-            string s = 
+            string s =
                 $"\nName          {Name}" +
                 $"\nSurname       {Surname}" +
                 $"\nSex           {Sex}" +
@@ -136,18 +145,6 @@ namespace Projekt.Pages
                 $"\nDailyCalories {DailyCalories}";
 
             Debug.WriteLine(s);
-        }
-
-        private bool SexCheck 
-            => man_radiobutton.IsChecked == true;
-
-        private int DietCheck()
-        {
-            if (vegetarian_radiobutton.IsChecked == true)
-                return 1;
-            if (vegan_radiobutton.IsChecked == true)
-                return 2;
-            return 0;
         }
     }
 }
