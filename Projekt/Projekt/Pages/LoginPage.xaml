@@ -99,7 +99,7 @@
                         Content="{x:Static resx:Resources.createAccount}"
                         FontSize="30"
                         Foreground="#66757F"
-                        Margin="0,50,0,0" Click="Button_Click"/>
+                        Margin="0,50,0,0" Click="Register_Click"/>
 
             </StackPanel>
 
