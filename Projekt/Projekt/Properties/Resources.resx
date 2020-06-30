@@ -159,8 +159,23 @@
   <data name="diet" xml:space="preserve">
     <value>Dieta</value>
   </data>
+  <data name="errorDifferentPasswords" xml:space="preserve">
+    <value>Hasła nie są takie same!</value>
+  </data>
   <data name="errorEmptyDatas" xml:space="preserve">
     <value>Nie wszystkie dane są poprawnie wypełnione!</value>
+  </data>
+  <data name="errorHasCorrectChars" xml:space="preserve">
+    <value>Hasło musi zawierać przynajmniej:
+• jedną wielką literę,
+• jedną małą literkę,
+• jedną cyfrę.</value>
+  </data>
+  <data name="errorIsCorrectLogin" xml:space="preserve">
+    <value>Login musi zawierać przynajmniej 5 i maksymalnie 10 znaków.</value>
+  </data>
+  <data name="errorIsCorrectLong" xml:space="preserve">
+    <value>Hasło musi zawierać przynajmniej 6  i maksymalnie 16 znaków.</value>
   </data>
   <data name="goal" xml:space="preserve">
     <value>Cel</value>

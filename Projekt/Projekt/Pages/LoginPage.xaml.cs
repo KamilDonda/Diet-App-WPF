@@ -1,6 +1,7 @@
 ﻿using Projekt.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,9 @@ namespace Projekt
 {
     public partial class LoginPage : Page
     {
+        private string login;
+        private string password;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -24,12 +28,24 @@ namespace Projekt
 
         private void Next_button_Click(object sender, RoutedEventArgs e)
         {
+            login = Login_textbox.Text;
+            password = Password_textbox.Password;
+
+            Debug.WriteLine(
+                $"\nLogin     {login}" +
+                $"\nPassword  {password}");
+
             // zmienić na główną stronę, ale ona jeszcze nie istnieje xd
-            IngredientsPage Page2 = new IngredientsPage();
-            NavigationService.Navigate(Page2);
+            SettingsPage newPage = new SettingsPage();
+
+            var hash = Login.HashPassword(password);
+            //var hashFromDB = ;                               // <---- Hasło z bazy danych
+
+            //if(Login.CheckPasswords(hash, hashFromDB))
+                NavigationService.Navigate(newPage);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Register_Click(object sender, RoutedEventArgs e)
         {
             RegisterPage registerPage = new RegisterPage();
             NavigationService.Navigate(registerPage);

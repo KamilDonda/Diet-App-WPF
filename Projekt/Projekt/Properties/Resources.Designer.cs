@@ -187,11 +187,50 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Hasła nie są takie same!.
+        /// </summary>
+        public static string errorDifferentPasswords {
+            get {
+                return ResourceManager.GetString("errorDifferentPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nie wszystkie dane są poprawnie wypełnione!.
         /// </summary>
         public static string errorEmptyDatas {
             get {
                 return ResourceManager.GetString("errorEmptyDatas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Hasło musi zawierać przynajmniej:
+        ///• jedną wielką literę,
+        ///• jedną małą literkę,
+        ///• jedną cyfrę..
+        /// </summary>
+        public static string errorHasCorrectChars {
+            get {
+                return ResourceManager.GetString("errorHasCorrectChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Login musi zawierać przynajmniej 5 i maksymalnie 10 znaków..
+        /// </summary>
+        public static string errorIsCorrectLogin {
+            get {
+                return ResourceManager.GetString("errorIsCorrectLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Hasło musi zawierać przynajmniej 6  i maksymalnie 16 znaków..
+        /// </summary>
+        public static string errorIsCorrectLong {
+            get {
+                return ResourceManager.GetString("errorIsCorrectLong", resourceCulture);
             }
         }
         
