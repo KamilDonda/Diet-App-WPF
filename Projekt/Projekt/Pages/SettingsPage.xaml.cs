@@ -94,6 +94,8 @@ namespace Projekt.Pages
                 BMR_textblock.Text = BMR.ToString();
                 TMR_textblock.Text = TMR.ToString();
                 DailyCalories_textblock.Text = DailyCalories.ToString();
+
+                Meals meals = new Meals(MealCount, DailyCalories, DietType, Goal, Weight);
             }
             catch
             {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 
 namespace Projekt
@@ -16,25 +18,73 @@ namespace Projekt
 
         public List<Meal> ListOfMeals { get; private set; } = new List<Meal>();
 
-        public Meals(int mealCount, int calories, int dietType, int goal)
+        public Meals(int mealCount, int calories, int dietType, int goal, double weight)
         {
-            int[] arr = calorieArray(mealCount, calories);
+            //int[] arr = calorieArray(mealCount, calories);
+
+            var totalProteins = GetTotalProteins(goal, weight);
+            var totalFat      = GetTotalFat(calories);
+            var totalCarbs    = GetTotalCarbs(calories, totalProteins, totalFat);
+
+            var proteins = GetMacroArray(mealCount, totalProteins);
+            var fat      = GetMacroArray(mealCount, totalFat);
+            var carbs    = GetMacroArray(mealCount, totalCarbs);
+
+            int Kcal = 0, Fat = 0, Proteins = 0, Carbs = 0, TotalGrams = 0;
 
             for (int i = 0; i < mealCount; i++)
-                ListOfMeals.Add(new Meal(arr[i], dietType, goal));
-            
+            {
+                Debug.WriteLine($"\n\n = = = Meal {i}: = = =");
+
+                ListOfMeals.Add(
+                    new Meal(
+                        dietType,
+                        proteins[i],
+                        fat[i],
+                        carbs[i]
+                        )
+                    );
+                Kcal       += ListOfMeals[i].Kcal;
+                Proteins   += ListOfMeals[i].Proteins;
+                Fat        += ListOfMeals[i].Fat;
+                Carbs      += ListOfMeals[i].Carbs;
+                TotalGrams += ListOfMeals[i].TotalGrams;
+            }
+            Debug.WriteLine($"\nTOTAL:" +
+                            $"\nProteins  {Proteins} g = {Proteins * 4} Kcal" +
+                            $"\nFat       {Fat} g = {Fat * 9} Kcal" +
+                            $"\nCarbs     {Carbs} g = {Carbs * 4} Kcal" +
+                            $"\nTotalgram {TotalGrams} g = {Kcal} Kcal");
         }
 
-        private int []calorieArray(int mealCount, int calories)
+        private double []GetMacroArray(int mealCount, double macro)
         {
-            var arr = new int[mealCount];
+            var arr = new double[mealCount];
 
             var n = mealCount - 2;
 
             for (int i = 0; i < mealCount; i++)
-                arr[i] = (int)(mealsMatrix[n][i] * calories);
+                arr[i] = (mealsMatrix[n][i] * macro);
 
             return arr;
         }
+
+        private double GetTotalProteins(int goal, double weight) //[grams]
+        {
+            if (goal == 0)
+                return (2 * weight);
+
+            if (goal == 1)
+                return (1.3 * weight);
+
+            return(1.6 * weight); 
+        }
+
+        private double GetTotalFat(int calories) // [grams]
+            => 0.2 * calories / 9; 
+
+        private double GetTotalCarbs(int calories, double proteins, double fat) // [grams]
+            => (calories - (proteins * 4 + fat * 9)) / 4; 
+        
     }
 }
