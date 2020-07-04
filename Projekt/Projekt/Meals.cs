@@ -18,7 +18,7 @@ namespace Projekt
 
         public List<Meal> ListOfMeals { get; private set; } = new List<Meal>();
 
-        public Meals(int mealCount, int calories, int dietType, int goal, double weight)
+        public Meals(int mealCount, double calories, int dietType, int goal, double weight)
         {
             //int[] arr = calorieArray(mealCount, calories);
 
@@ -30,7 +30,7 @@ namespace Projekt
             var fat      = GetMacroArray(mealCount, totalFat);
             var carbs    = GetMacroArray(mealCount, totalCarbs);
 
-            int Kcal = 0, Fat = 0, Proteins = 0, Carbs = 0, TotalGrams = 0;
+            double Kcal = 0, Fat = 0, Proteins = 0, Carbs = 0, TotalGrams = 0;
 
             for (int i = 0; i < mealCount; i++)
             {
@@ -51,10 +51,10 @@ namespace Projekt
                 TotalGrams += ListOfMeals[i].TotalGrams;
             }
             Debug.WriteLine($"\nTOTAL:" +
-                            $"\nProteins  {Proteins} g = {Proteins * 4} Kcal" +
-                            $"\nFat       {Fat} g = {Fat * 9} Kcal" +
-                            $"\nCarbs     {Carbs} g = {Carbs * 4} Kcal" +
-                            $"\nTotalgram {TotalGrams} g = {Kcal} Kcal");
+                            $"\nProteins  {Proteins.ToString("0.##")} g = {(Proteins * 4).ToString("0.##")} Kcal" +
+                            $"\nFat       {Fat.ToString("0.##")} g = {(Fat * 9).ToString("0.##")} Kcal" +
+                            $"\nCarbs     {Carbs.ToString("0.##")} g = {(Carbs * 4).ToString("0.##")} Kcal" +
+                            $"\nTotalgram {TotalGrams.ToString("0.##")} g = {Kcal.ToString("0.##")} Kcal");
         }
 
         private double []GetMacroArray(int mealCount, double macro)
@@ -80,10 +80,10 @@ namespace Projekt
             return(1.6 * weight); 
         }
 
-        private double GetTotalFat(int calories) // [grams]
+        private double GetTotalFat(double calories) // [grams]
             => 0.2 * calories / 9; 
 
-        private double GetTotalCarbs(int calories, double proteins, double fat) // [grams]
+        private double GetTotalCarbs(double calories, double proteins, double fat) // [grams]
             => (calories - (proteins * 4 + fat * 9)) / 4; 
         
     }

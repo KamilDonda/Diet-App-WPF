@@ -115,6 +115,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dodaj ≻.
+        /// </summary>
+        public static string add {
+            get {
+                return ResourceManager.GetString("add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Wiek.
         /// </summary>
         public static string age {
@@ -147,6 +156,15 @@ namespace Projekt.Properties {
         public static string bmr {
             get {
                 return ResourceManager.GetString("bmr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Węglowodany [g].
+        /// </summary>
+        public static string carbs {
+            get {
+                return ResourceManager.GetString("carbs", resourceCulture);
             }
         }
         
@@ -235,6 +253,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Tłuszcze [g].
+        /// </summary>
+        public static string fat {
+            get {
+                return ResourceManager.GetString("fat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Cel.
         /// </summary>
         public static string goal {
@@ -276,6 +303,33 @@ namespace Projekt.Properties {
         public static string height {
             get {
                 return ResourceManager.GetString("height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nr.
+        /// </summary>
+        public static string id {
+            get {
+                return ResourceManager.GetString("id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nazwa.
+        /// </summary>
+        public static string itemName {
+            get {
+                return ResourceManager.GetString("itemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Kcal.
+        /// </summary>
+        public static string kcal {
+            get {
+                return ResourceManager.GetString("kcal", resourceCulture);
             }
         }
         
@@ -330,6 +384,15 @@ namespace Projekt.Properties {
         public static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Białko [g].
+        /// </summary>
+        public static string protein {
+            get {
+                return ResourceManager.GetString("protein", resourceCulture);
             }
         }
         
@@ -402,6 +465,15 @@ namespace Projekt.Properties {
         public static string tmr {
             get {
                 return ResourceManager.GetString("tmr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Typ diety.
+        /// </summary>
+        public static string type {
+            get {
+                return ResourceManager.GetString("type", resourceCulture);
             }
         }
         

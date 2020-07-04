@@ -135,6 +135,9 @@
   <data name="activityLevel4" xml:space="preserve">
     <value>Bardzo wysoki</value>
   </data>
+  <data name="add" xml:space="preserve">
+    <value>Dodaj ≻</value>
+  </data>
   <data name="age" xml:space="preserve">
     <value>Wiek</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="bmr" xml:space="preserve">
     <value>BMR [Kcal]</value>
+  </data>
+  <data name="carbs" xml:space="preserve">
+    <value>Węglowodany [g]</value>
   </data>
   <data name="confirmPassword" xml:space="preserve">
     <value>Potwierdź hasło</value>
@@ -177,6 +183,9 @@
   <data name="errorIsCorrectLong" xml:space="preserve">
     <value>Hasło musi zawierać przynajmniej 6  i maksymalnie 16 znaków.</value>
   </data>
+  <data name="fat" xml:space="preserve">
+    <value>Tłuszcze [g]</value>
+  </data>
   <data name="goal" xml:space="preserve">
     <value>Cel</value>
   </data>
@@ -191,6 +200,15 @@
   </data>
   <data name="height" xml:space="preserve">
     <value>Wzrost [cm]</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>Nr</value>
+  </data>
+  <data name="itemName" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="kcal" xml:space="preserve">
+    <value>Kcal</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Login</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="password" xml:space="preserve">
     <value>Hasło</value>
+  </data>
+  <data name="protein" xml:space="preserve">
+    <value>Białko [g]</value>
   </data>
   <data name="sex" xml:space="preserve">
     <value>Płeć</value>
@@ -233,6 +254,9 @@
   </data>
   <data name="tmr" xml:space="preserve">
     <value>TMR [Kcal]</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Typ diety</value>
   </data>
   <data name="vegan" xml:space="preserve">
     <value>Wegańska</value>

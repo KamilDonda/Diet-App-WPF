@@ -7,56 +7,25 @@ namespace Projekt.DAL.Entities
 {
     class Meals
     {
-        public int ID
-        {
-            get;
-            set;
-        }
-        public string Name
-        {
-            get;
-            set;
-        }
-        public int Weight
-        {
-            get;
-            set;
-        }
-        public int Kcal
-        {
-            get;
-            set;
-        }
-        public int Protein
-        {
-            get;
-            set;
-        }
-        public int Fat
-        {
-            get;
-            set;
-        }
-        public int Carbs
-        {
-            get;
-            set;
-        }
-        public enum User
-        {
-            all, vegetarian, vegan
-        }
+        public int ID           { get; private set; }
+        public string Name      { get; private set; }
+        public double Weight    { get; private set; }
+        public double Kcal      { get; private set; }
+        public double Protein   { get; private set; }
+        public double Fat       { get; private set; }
+        public double Carbs     { get; private set; }
+        public uint DietType    { get; private set; }
 
-        public Meals(MySqlDataReader mySqlDataReader)
+        public Meals(MySqlDataReader reader)
         {
-            ID = (int)mySqlDataReader["id"];
-            Name = mySqlDataReader["name"].ToString();
-            Weight = (int)mySqlDataReader["weight"];
-            Kcal = (int)mySqlDataReader["kcal"];
-            Protein = (int)mySqlDataReader["protein"];
-            Fat = (int)mySqlDataReader["fat"];
-            Carbs = (int)mySqlDataReader["carbs"];
-            //User = mySqlDataReader["user"]; Nie wiem jak enuma tu zrobić
+            ID       = int.Parse(reader["id"].ToString());
+            Name     = reader["name"].ToString();
+            Weight   = double.Parse(reader["weight"].ToString());
+            Kcal     = double.Parse(reader["kcal"].ToString());
+            Protein  = double.Parse(reader["protein"].ToString());
+            Fat      = double.Parse(reader["fat"].ToString());
+            Carbs    = double.Parse(reader["carbs"].ToString());
+            DietType = uint.Parse(reader["diettype"].ToString());
         }
 
         /*public override string ToString()

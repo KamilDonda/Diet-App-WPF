@@ -10,6 +10,144 @@
       Title="IngredientsPage">
 
     <Grid>
-        <TextBlock Text="Ingredients" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+
+        <StackPanel Orientation="Vertical">
+        
+            <StackPanel Width="700"
+                        Height="700"
+                        Margin="0 10 0 0">
+
+                <ListView x:Name="Ingredients_listview">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                            <Setter Property="BorderThickness" Value="0 0 0 0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="TextElement.Foreground" Value="Black"/>
+                                            <Setter Property="Padding" Value="10 0 10 0"/>
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            
+                            </GridView.ColumnHeaderContainerStyle>
+
+                            <GridViewColumn Header="{x:Static resx:Resources.id }" 
+                                            DisplayMemberBinding="{Binding ID}" 
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.itemName }" 
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.kcal }" 
+                                            DisplayMemberBinding="{Binding Kcal}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.protein }" 
+                                            DisplayMemberBinding="{Binding Protein}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.fat }" 
+                                            DisplayMemberBinding="{Binding Fat}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.carbs }" 
+                                            DisplayMemberBinding="{Binding Carbs}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.type }" 
+                                            DisplayMemberBinding="{Binding Type}"
+                                            Width="Auto"/>
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+            
+            </StackPanel>
+
+            <StackPanel Width="700"
+                        Height="34"
+                        Orientation="Horizontal">
+
+                <StackPanel>
+                
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock Width="160"
+                                   Text="{x:Static resx:Resources.itemName}"
+                                   TextAlignment="Center"/>
+
+                        <TextBlock Width="50"
+                                   Text="{x:Static resx:Resources.kcal}"
+                                   TextAlignment="Center"/>
+
+                        <TextBlock Width="70"
+                                   Text="{x:Static resx:Resources.protein}"
+                                   TextAlignment="Center"/>
+
+                        <TextBlock Width="70"
+                                   Text="{x:Static resx:Resources.fat}"
+                                   TextAlignment="Center"/>
+
+                        <TextBlock Width="120"
+                                   Text="{x:Static resx:Resources.carbs}"
+                                   TextAlignment="Center"/>
+
+                        <TextBlock Width="150"
+                                   Text="{x:Static resx:Resources.type}"
+                                   TextAlignment="Center"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBox x:Name="Name_textbox"
+                                 Width="160"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="Kcal_textbox"
+                                 Width="50"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="Protein_textbox"
+                                 Width="70"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="Fat_textbox"
+                                 Width="70"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="Carbs_textbox"
+                                 Width="120"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"/>
+
+                        <ComboBox x:Name="DietType_combobox"
+                                  Width="150"
+                                  VerticalAlignment="Center" 
+                                  HorizontalAlignment="Center"
+                                  SelectedIndex="0"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+
+                <Button x:Name="Add_button"
+                        Width="80"
+                        Content="{x:Static resx:Resources.add}"
+                        Padding="0"
+                        Margin="0"/>
+
+            </StackPanel>
+            
+        </StackPanel>
+        
     </Grid>
 </Page>

@@ -1,29 +1,28 @@
 ﻿using MySql.Data.MySqlClient;
-using Projekt.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Projekt.DAL.Repositories
 {
-    class MealsRepos
+    class HistoryRepos
     {
-        private const string ALL_MEALS = "SELECT * FROM MEALS";
+        private const string HISTORY = "SELECT * FROM HISTORY";
 
-        public static List<Entities.Meals> GetAllMeals()
+        public static List<Entities.History> GetAllHistories()
         {
-            List<Entities.Meals> meals = new List<Entities.Meals>();
+            List<Entities.History> history = new List<Entities.History>();
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(ALL_MEALS, connection);
+                MySqlCommand command = new MySqlCommand(HISTORY, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    meals.Add(new Entities.Meals(reader));
+                    history.Add(new Entities.History(reader));
                 connection.Close();
             }
-            return meals;
+            return history;
         }
     }
 }

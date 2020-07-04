@@ -8,24 +8,20 @@ namespace Projekt.DAL.Repositories
 {
     class IngredientsRepos
     {
-        private const string ALL_INGREDIENTS_QUERY = "SELECT * FROM Ingredients";
+        private const string ALL_INGREDIENTS = "SELECT * FROM Ingredients";
 
-        public static List<Ingredients> GetAllIngredients()
+        public static List<Entities.Ingredients> GetAllIngredients()
         {
-            List<Ingredients> ingredients = new List<Ingredients>();
-            try
-            {
-                using var connection = DBConnection.Instance.Connection;
-                MySqlCommand command = new MySqlCommand(ALL_INGREDIENTS_QUERY, connection);
-                connection.Open();
-                var dataReader = command.ExecuteReader();
-                while (dataReader.Read())
-                    ingredients.Add(new Ingredients(dataReader));
-                connection.Close();
-            }
-            catch
-            {
+            List<Entities.Ingredients> ingredients = new List<Entities.Ingredients>();
 
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand(ALL_INGREDIENTS, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    ingredients.Add(new Ingredients(reader));
+                connection.Close();
             }
             return ingredients;
         }

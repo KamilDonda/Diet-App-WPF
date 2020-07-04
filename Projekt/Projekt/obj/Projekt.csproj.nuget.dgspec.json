@@ -41,6 +41,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.20, )"
+            },
+            "System.Windows.Interactivity.WPF": {
+              "target": "Package",
+              "version": "[2.0.20525, )"
             }
           },
           "imports": [
