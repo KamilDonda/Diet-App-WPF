@@ -8,7 +8,7 @@ namespace Projekt.DAL.Repositories
 {
     class MealsRepos
     {
-        private const string ALL_MEALS = "SELECT * FROM MEALS";
+        private const string GET_ALL = "SELECT * FROM MEALS";
 
         public static List<Entities.Meals> GetAllMeals()
         {
@@ -16,7 +16,7 @@ namespace Projekt.DAL.Repositories
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(ALL_MEALS, connection);
+                MySqlCommand command = new MySqlCommand(GET_ALL, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())

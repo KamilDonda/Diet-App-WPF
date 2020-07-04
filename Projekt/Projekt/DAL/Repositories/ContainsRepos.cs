@@ -7,7 +7,7 @@ namespace Projekt.DAL.Repositories
 {
     class ContainsRepos
     {
-        private const string CONTAINS = "SELECT * FROM CONTAINS";
+        private const string GET_ALL = "SELECT * FROM CONTAINS";
 
         public static List<Entities.Contains> GetAllContainers()
         {
@@ -15,7 +15,7 @@ namespace Projekt.DAL.Repositories
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(CONTAINS, connection);
+                MySqlCommand command = new MySqlCommand(GET_ALL, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())

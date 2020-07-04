@@ -7,7 +7,7 @@ namespace Projekt.DAL.Repositories
 {
     class UsersRepos
     {
-        private const string ALL_USERS = "SELECT * FROM USERS";
+        private const string GET_ALL = "SELECT * FROM USERS";
 
         public static List<Entities.Users> GetAllUsers()
         {
@@ -15,7 +15,7 @@ namespace Projekt.DAL.Repositories
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(ALL_USERS, connection);
+                MySqlCommand command = new MySqlCommand(GET_ALL, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())

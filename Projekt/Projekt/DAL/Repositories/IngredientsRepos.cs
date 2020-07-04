@@ -8,7 +8,8 @@ namespace Projekt.DAL.Repositories
 {
     class IngredientsRepos
     {
-        private const string ALL_INGREDIENTS = "SELECT * FROM Ingredients";
+        private const string GET_ALL = "SELECT * FROM Ingredients";
+        private const string INSERT = "INSERT INTO Ingredients VALUES ";
 
         public static List<Entities.Ingredients> GetAllIngredients()
         {
@@ -16,7 +17,7 @@ namespace Projekt.DAL.Repositories
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(ALL_INGREDIENTS, connection);
+                MySqlCommand command = new MySqlCommand(GET_ALL, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -24,6 +25,21 @@ namespace Projekt.DAL.Repositories
                 connection.Close();
             }
             return ingredients;
+        }
+
+        public static bool Insert(Ingredients ingredients)
+        {
+            bool condition = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{INSERT} {ingredients.ToInsert()}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                condition = true;
+                ingredients.ID = (int)command.LastInsertedId;
+                connection.Close();
+            }
+            return condition;
         }
     }
 }
