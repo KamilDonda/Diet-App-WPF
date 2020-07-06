@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\DatabaseInserter\\DatabaseInserter.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\DatabaseInserter\\DatabaseInserter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\DatabaseInserter\\DatabaseInserter.csproj",
+        "projectName": "DatabaseInserter",
+        "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\DatabaseInserter\\DatabaseInserter.csproj",
+        "packagesPath": "C:\\Users\\donda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\DatabaseInserter\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\donda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {
+                "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+        "projectName": "Projekt",
+        "projectPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\Projekt.csproj",
+        "packagesPath": "C:\\Users\\donda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donda\\Desktop\\Projekt-Semestralny\\Projekt\\Projekt\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\donda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "System.Windows.Interactivity.WPF": {
+              "target": "Package",
+              "version": "[2.0.20525, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

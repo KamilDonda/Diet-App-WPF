@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekt.DAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,15 @@ namespace Projekt.Pages
         public MealsPage()
         {
             InitializeComponent();
+            var mealsRepos = MealsRepos.GetAll();
+            Meals_listview.ItemsSource = mealsRepos; 
+        }
+
+        private void Meals_Click(object sender, RoutedEventArgs e)
+        {
+            var index = (sender as ListView).SelectedIndex + 1;
+            var ingredientsRepos = IngredientsRepos.GetByID(index);
+            Ingredients_listview.ItemsSource = ingredientsRepos;
         }
     }
 }

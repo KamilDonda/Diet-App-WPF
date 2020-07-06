@@ -31,6 +31,12 @@
       <Value Profile="(Default)">3306</Value>
     </Setting>
     
+    <!--__________________CHARACTERSET____________________-->
+    <Setting Name="CharacterSet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">utf8</Value>
+    </Setting>
+
+
   </Settings>
   
 </SettingsFile>

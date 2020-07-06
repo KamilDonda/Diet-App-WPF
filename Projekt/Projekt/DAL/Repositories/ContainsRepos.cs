@@ -5,11 +5,12 @@ using System.Text;
 
 namespace Projekt.DAL.Repositories
 {
-    class ContainsRepos
+    public class ContainsRepos
     {
         private const string GET_ALL = "SELECT * FROM CONTAINS";
+        private const string INSERT = "INSERT INTO Contains VALUES ";
 
-        public static List<Entities.Contains> GetAllContainers()
+        public static List<Entities.Contains> GetAll()
         {
             List<Entities.Contains> contains = new List<Entities.Contains>();
 
@@ -23,6 +24,21 @@ namespace Projekt.DAL.Repositories
                 connection.Close();
             }
             return contains;
+        }
+
+        public static bool Insert(Entities.Contains contains)
+        {
+            bool condition = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{INSERT} {contains.ToInsert()}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                condition = true;
+                contains.ID = (int)command.LastInsertedId;
+                connection.Close();
+            }
+            return condition;
         }
     }
 }

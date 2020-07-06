@@ -9,7 +9,7 @@ namespace Projekt.DAL.Repositories
     {
         private const string GET_ALL = "SELECT * FROM HISTORY";
 
-        public static List<Entities.History> GetAllHistories()
+        public static List<Entities.History> GetAll()
         {
             List<Entities.History> history = new List<Entities.History>();
 

@@ -21,11 +21,12 @@ namespace Projekt.DAL
         private DBConnection()
         {
 
-            stringBuilder.UserID    = Properties.Settings.Default.User;
-            stringBuilder.Password  = Properties.Settings.Default.Password;
-            stringBuilder.Server    = Properties.Settings.Default.Server;
-            stringBuilder.Database  = Properties.Settings.Default.Database;
-            stringBuilder.Port      = Properties.Settings.Default.Port;
+            stringBuilder.UserID       = Properties.Settings.Default.User;
+            stringBuilder.Password     = Properties.Settings.Default.Password;
+            stringBuilder.Server       = Properties.Settings.Default.Server;
+            stringBuilder.Database     = Properties.Settings.Default.Database;
+            stringBuilder.Port         = Properties.Settings.Default.Port;
+            stringBuilder.CharacterSet = Properties.Settings.Default.CharacterSet;
         }
 
     }

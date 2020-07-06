@@ -316,6 +316,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Składniki.
+        /// </summary>
+        public static string ingredients {
+            get {
+                return ResourceManager.GetString("ingredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nazwa.
         /// </summary>
         public static string itemName {
@@ -348,6 +357,15 @@ namespace Projekt.Properties {
         public static string man {
             get {
                 return ResourceManager.GetString("man", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Posiłki.
+        /// </summary>
+        public static string meals {
+            get {
+                return ResourceManager.GetString("meals", resourceCulture);
             }
         }
         
@@ -510,6 +528,15 @@ namespace Projekt.Properties {
         public static string weight {
             get {
                 return ResourceManager.GetString("weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Waga [g].
+        /// </summary>
+        public static string weightItem {
+            get {
+                return ResourceManager.GetString("weightItem", resourceCulture);
             }
         }
         

@@ -204,6 +204,9 @@
   <data name="id" xml:space="preserve">
     <value>Nr</value>
   </data>
+  <data name="ingredients" xml:space="preserve">
+    <value>Składniki</value>
+  </data>
   <data name="itemName" xml:space="preserve">
     <value>Nazwa</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="man" xml:space="preserve">
     <value>Mężczyzna</value>
+  </data>
+  <data name="meals" xml:space="preserve">
+    <value>Posiłki</value>
   </data>
   <data name="mealsCount" xml:space="preserve">
     <value>Preferowana liczba posiłków</value>
@@ -269,6 +275,9 @@
   </data>
   <data name="weight" xml:space="preserve">
     <value>Waga [kg]</value>
+  </data>
+  <data name="weightItem" xml:space="preserve">
+    <value>Waga [g]</value>
   </data>
   <data name="woman" xml:space="preserve">
     <value>Kobieta</value>

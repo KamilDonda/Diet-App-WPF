@@ -11,12 +11,10 @@ namespace Projekt
 
         public static int getBMR(double Height, double Weight, int Age, bool Sex)
         {
-            var result = 10 * Weight + 6.25 * Height - 5 * Age;
+            var result = 10 * Weight + 6.25 * Height - 5 * Age + 5;
 
-            if (Sex)
-                result += 5;
-            else
-                result -= 161;
+            if (!Sex)
+                result -= 166;
 
             return (int)result;
         }

@@ -34,7 +34,7 @@ namespace Projekt.Pages
         public IngredientsPage()
         {
             InitializeComponent();
-            var ingredientsRepos = IngredientsRepos.GetAllIngredients();
+            var ingredientsRepos = IngredientsRepos.GetAll();
             Ingredients_listview.ItemsSource = ingredientsRepos;
 
             DietType_combobox.ItemsSource = listOfDietType();

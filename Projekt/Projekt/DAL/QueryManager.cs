@@ -10,11 +10,11 @@ namespace Projekt.DAL
     {
         public List<Ingredients> Ingredients
         {
-            get => IngredientsRepos.GetAllIngredients();
+            get => IngredientsRepos.GetAll();
         }
         public List<Entities.Meals> Meals
         {
-            get => MealsRepos.GetAllMeals();
+            get => MealsRepos.GetAll();
         }
     }
 }

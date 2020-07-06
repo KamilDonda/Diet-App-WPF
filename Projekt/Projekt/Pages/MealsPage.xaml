@@ -12,6 +12,129 @@
       Background="White">
 
     <Grid>
-        <Label FontSize="50">POSIŁKI</Label>
+
+        <StackPanel Orientation="Vertical"
+                    Width="700">
+
+            <TextBlock Text="{x:Static resx:Resources.meals}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+
+            <Grid Height="450"
+                  Margin="0 10 0 10">
+
+                <ListView x:Name="Meals_listview"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          ScrollViewer.CanContentScroll="False"
+                          PreviewMouseLeftButtonUp="Meals_Click">
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                            <Setter Property="BorderThickness" Value="0 0 0 0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                    <Setter Property="Padding" Value="10 0 10 0"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+
+                            </GridView.ColumnHeaderContainerStyle>
+
+                            <GridViewColumn Header="{x:Static resx:Resources.id }" 
+                                            DisplayMemberBinding="{Binding ID}" 
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.itemName }" 
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.weightItem }" 
+                                            DisplayMemberBinding="{Binding Weight}" 
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.kcal }" 
+                                            DisplayMemberBinding="{Binding Kcal}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.protein }" 
+                                            DisplayMemberBinding="{Binding Protein}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.fat }" 
+                                            DisplayMemberBinding="{Binding Fat}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.carbs }" 
+                                            DisplayMemberBinding="{Binding Carbs}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.type }" 
+                                            DisplayMemberBinding="{Binding Type}"
+                                            Width="Auto"/>
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+
+            </Grid>
+
+            <TextBlock Text="{x:Static resx:Resources.ingredients}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+
+            <Grid Height="150"
+                  Margin="0 10 0 10">
+
+                <ListView x:Name="Ingredients_listview"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          ScrollViewer.CanContentScroll="False">
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                            <Setter Property="BorderThickness" Value="0 0 0 0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                    <Setter Property="Padding" Value="10 0 10 0"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+
+                            </GridView.ColumnHeaderContainerStyle>
+
+                            <GridViewColumn Header="{x:Static resx:Resources.id }" 
+                                            DisplayMemberBinding="{Binding ID}" 
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.itemName }" 
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.kcal }" 
+                                            DisplayMemberBinding="{Binding Kcal}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.protein }" 
+                                            DisplayMemberBinding="{Binding Protein}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.fat }" 
+                                            DisplayMemberBinding="{Binding Fat}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.carbs }" 
+                                            DisplayMemberBinding="{Binding Carbs}"
+                                            Width="Auto"/>
+                            <GridViewColumn Header="{x:Static resx:Resources.weightItem }" 
+                                            DisplayMemberBinding="{Binding Weight}"
+                                            Width="Auto"/>
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+
+            </Grid>
+
+        </StackPanel>
+
     </Grid>
 </Page>

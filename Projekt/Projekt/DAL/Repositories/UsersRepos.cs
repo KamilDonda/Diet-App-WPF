@@ -9,7 +9,7 @@ namespace Projekt.DAL.Repositories
     {
         private const string GET_ALL = "SELECT * FROM USERS";
 
-        public static List<Entities.Users> GetAllUsers()
+        public static List<Entities.Users> GetAll()
         {
             List<Entities.Users> users = new List<Entities.Users>();
 

@@ -82,5 +82,17 @@ namespace Projekt.Properties {
                 this["Port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("utf8")]
+        public string CharacterSet {
+            get {
+                return ((string)(this["CharacterSet"]));
+            }
+            set {
+                this["CharacterSet"] = value;
+            }
+        }
     }
 }

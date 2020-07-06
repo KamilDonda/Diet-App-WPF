@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Projekt.DAL.Entities
 {
-    class Ingredients
+    public class Ingredients
     {
         public int? ID { get; set; }
         public string Name { get; private set; }
@@ -14,7 +14,6 @@ namespace Projekt.DAL.Entities
         public double Fat { get; private set; }
         public double Carbs { get; private set; }
         public string Type { get; private set; }
-
 
         public Ingredients(MySqlDataReader reader)
         {
@@ -25,6 +24,13 @@ namespace Projekt.DAL.Entities
             Fat = double.Parse(reader["fat"].ToString());
             Carbs = double.Parse(reader["carbs"].ToString());
             Type = reader["type"].ToString();
+
+            if (Type == "0")
+                Type = Properties.Resources.normal;
+            if (Type == "1")
+                Type = Properties.Resources.vegetarian;
+            if (Type == "2")
+                Type = Properties.Resources.vegan;
         }
 
         public Ingredients(string name, double kcal, double protein,
@@ -52,7 +58,11 @@ namespace Projekt.DAL.Entities
 
         public string ToInsert()
         {
-            return $"('{ID}', '{Name}', '{Kcal}', '{Protein}', '{Fat}', '{Carbs}', '{Type}')";
+            var kcal = Kcal.ToString().Replace(',', '.');
+            var protein = Protein.ToString().Replace(',','.');
+            var fat = Fat.ToString().Replace(',', '.');
+            var carbs = Carbs.ToString().Replace(',', '.');
+            return $"('{ID}', '{Name}', '{kcal}', '{protein}', '{fat}', '{carbs}', '{Type}')";
         }
     } 
 }
