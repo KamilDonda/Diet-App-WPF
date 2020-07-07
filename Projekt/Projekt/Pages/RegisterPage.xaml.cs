@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Projekt.DAL;
+using Projekt.DAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -22,6 +24,7 @@ namespace Projekt.Pages
         private string login;
         private string password;
         private string confirmPassword;
+        private string hashPassword;
 
         public RegisterPage()
         {
@@ -39,15 +42,26 @@ namespace Projekt.Pages
                 $"\nPassword  {password}" +
                 $"\nConfirm   {confirmPassword}");
 
-            SettingsPage settingsPage = new SettingsPage();
+            LoginPage loginPage = new LoginPage();
 
             if (Login.IsPasswordCorrect(password, confirmPassword) &&
                 Login.IsCorrectLogin(login))
             {
-                var hash = Login.HashPassword(password);
-                Debug.WriteLine($"Hash  {hash}");
+                hashPassword = Login.HashPassword(password);
+                Debug.WriteLine($"Hash  {hashPassword}");
 
-                NavigationService.Navigate(settingsPage);
+                try
+                {
+                    UsersRepos.CreateUser(login, hashPassword);
+                    Debug.WriteLine("OK");
+                }
+                catch
+                {
+                    MessageBox.Show(Properties.Resources.errorCreateUser, Properties.Resources.warning);
+                    return;
+                }
+
+                NavigationService.Navigate(loginPage);
             }
         }
     }

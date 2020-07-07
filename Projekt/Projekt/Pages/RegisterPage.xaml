@@ -13,7 +13,7 @@
 
     <Grid>
 
-        <StackPanel Width="600"
+        <StackPanel Width="650"
                     Height="650"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
@@ -124,20 +124,22 @@
             </StackPanel>
 
             <!-- Next button -->
-            <StackPanel Width="100"
+            <StackPanel Width="150"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
 
                 <Button x:Name="Next_button"
                         BorderBrush="Transparent"
                         Background="Transparent"
-                        Margin="16"
                         Click="Next_button_Click"
                         Padding="0">
-
-                    <Image  Source="/Images/next.png"
-                            Stretch="None"/>
-
+                    <StackPanel>
+                        <Image  Source="/Images/next.png"
+                                Stretch="None"/>
+                        <TextBlock Text="{x:Static resx:Resources.createAccount}"
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"/>
+                    </StackPanel>
                 </Button>
 
             </StackPanel>

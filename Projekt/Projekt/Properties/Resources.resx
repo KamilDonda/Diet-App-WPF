@@ -165,6 +165,9 @@
   <data name="diet" xml:space="preserve">
     <value>Dieta</value>
   </data>
+  <data name="errorCreateUser" xml:space="preserve">
+    <value>Nie udalo się utworzyć użytkownika!</value>
+  </data>
   <data name="errorDifferentPasswords" xml:space="preserve">
     <value>Hasła nie są takie same!</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="errorIsCorrectLong" xml:space="preserve">
     <value>Hasło musi zawierać przynajmniej 6  i maksymalnie 16 znaków.</value>
+  </data>
+  <data name="errorUserDoesNotExist" xml:space="preserve">
+    <value>Podany użytkownik nie istnieje!</value>
   </data>
   <data name="fat" xml:space="preserve">
     <value>Tłuszcze [g]</value>
@@ -236,6 +242,9 @@
   </data>
   <data name="protein" xml:space="preserve">
     <value>Białko [g]</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Zapisz</value>
   </data>
   <data name="sex" xml:space="preserve">
     <value>Płeć</value>

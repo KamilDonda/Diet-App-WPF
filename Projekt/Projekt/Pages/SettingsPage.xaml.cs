@@ -1,4 +1,5 @@
 ﻿using System;
+using Projekt.DAL;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -14,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Linq;
+using Projekt.DAL.Entities;
+using Projekt.DAL.Repositories;
 
 namespace Projekt.Pages
 {
@@ -24,13 +27,13 @@ namespace Projekt.Pages
         public string Name       { get; set; }
         public string Surname    { get; set; }
         public bool Sex          { get; set; } // true = man | false = woman
-        public int Age           { get; set; }
+        public uint Age          { get; set; }
         public double Height     { get; set; }
         public double Weight     { get; set; }
-        public int ActivityLevel { get; set; } // 0, 1, 2, 3, 4
-        public int Goal          { get; set; } // 0, 1, 2
-        public int DietType      { get; set; } // 0, 1, 2
-        public int MealCount     { get; set; } // 2, 3, 4, 5
+        public uint ActivityLevel { get; set; } // 0, 1, 2, 3, 4
+        public uint Goal         { get; set; } // 0, 1, 2
+        public uint DietType     { get; set; } // 0, 1, 2
+        public uint MealCount    { get; set; } // 2, 3, 4, 5
         public double BMI        { get; set; }
         public int BMR           { get; set; }
         public int TMR           { get; set; }
@@ -78,24 +81,36 @@ namespace Projekt.Pages
                 Name = Name_textbox.Text;
                 Surname = Surname_textbox.Text;
                 Sex = SexCheck;
-                Age = Convert.ToInt32(Age_textbox.Text);
+                Age = Convert.ToUInt32(Age_textbox.Text);
                 Height = Convert.ToDouble(Height_textbox.Text.Replace('.', ','));
                 Weight = Convert.ToDouble(Weight_textbox.Text.Replace('.', ','));
-                ActivityLevel = ActivityLevel_combobox.SelectedIndex;
-                Goal = Goal_combobox.SelectedIndex;
-                DietType = DietCheck();
-                MealCount = Convert.ToInt32(MealsCount_combobox.SelectedItem);
+                ActivityLevel = Convert.ToUInt32(ActivityLevel_combobox.SelectedIndex);
+                Goal = Convert.ToUInt32(Goal_combobox.SelectedIndex);
+                DietType = Convert.ToUInt32(DietCheck());
+                MealCount = Convert.ToUInt32(MealsCount_combobox.SelectedItem);
                 BMI = MathOperations.getBMI(Height, Weight);
-                BMR = MathOperations.getBMR(Height, Weight, Age, Sex);
-                TMR = MathOperations.getTMR(ActivityLevel, BMR);
-                DailyCalories = MathOperations.getDailyCalories(Goal, TMR);
+                BMR = MathOperations.getBMR(Height, Weight, Convert.ToInt32(Age), Sex);
+                TMR = MathOperations.getTMR(Convert.ToInt32(ActivityLevel), BMR);
+                DailyCalories = MathOperations.getDailyCalories(Convert.ToInt32(Goal), TMR);
 
                 BMI_textblock.Text = BMI.ToString("0.##");
                 BMR_textblock.Text = BMR.ToString();
                 TMR_textblock.Text = TMR.ToString();
                 DailyCalories_textblock.Text = DailyCalories.ToString();
 
-                Meals meals = new Meals(MealCount, DailyCalories, DietType, Goal, Weight);
+                Meals meals = new Meals(Convert.ToInt32(MealCount), DailyCalories, 
+                    Convert.ToInt32(DietType), Convert.ToInt32(Goal), Weight);
+
+                uint sex;
+                if (Sex)
+                    sex = 1;
+                else
+                    sex = 0;
+
+                Users user = new Users(Login.UserLogin, Name, Surname, Age, Height, Weight, Goal, 
+                    sex, ActivityLevel, DailyCalories, DietType, MealCount);
+
+                UsersRepos.Update(user);
             }
             catch
             {

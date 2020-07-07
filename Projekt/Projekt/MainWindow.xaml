@@ -90,7 +90,8 @@
                 <Button x:Name="Diet_button"
                         BorderBrush="Transparent"
                         Background="Transparent"
-                        Margin="16" Click="Diet_button_Click">
+                        Margin="16" Click="Diet_button_Click"
+                        Visibility="Hidden">
                     <StackPanel>
                         <Image  Source="Images/diet.png"
                                 Stretch="None"/>
@@ -105,7 +106,8 @@
                 <Button x:Name="Settings_button"
                         BorderBrush="Transparent"
                         Background="Transparent"
-                        Margin="16" Click="Settings_button_Click">
+                        Margin="16" Click="Settings_button_Click"
+                        Visibility="Hidden">
                     <StackPanel>
                         <Image  Source="Images/settings.png"
                                 Stretch="None"/>

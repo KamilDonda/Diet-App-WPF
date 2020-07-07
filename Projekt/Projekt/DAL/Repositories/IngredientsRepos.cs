@@ -33,9 +33,6 @@ namespace Projekt.DAL.Repositories
 
             using (var connection = DBConnection.Instance.Connection)
             {
-                //MySqlCommand command = new MySqlCommand($"SELECT * FROM INGREDIENTS WHERE ID IN " +
-                //    $"(SELECT ID_INGREDIENTS FROM CONTAINS WHERE ID_MEALS = {id})", connection);
-
                 MySqlCommand command = new MySqlCommand($"SELECT I.*, C.WEIGHT " +
                     $"FROM INGREDIENTS I, MEALS M, CONTAINS C " +
                     $"WHERE M.ID = {id} AND C.ID_MEALS = M.ID AND C.ID_INGREDIENTS = I.ID", connection);

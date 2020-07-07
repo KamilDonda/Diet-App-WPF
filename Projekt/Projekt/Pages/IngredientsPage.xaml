@@ -20,9 +20,9 @@
                        HorizontalAlignment="Center"
                        FontSize="20"/>
 
-            <Grid Width="700"
-                        Height="650"
-                        Margin="0 10 0 10">
+            <Grid Width="750"
+                  Height="650"
+                  Margin="0 10 0 10">
 
                 <ListView x:Name="Ingredients_listview"
                           ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -150,7 +150,9 @@
                         Width="80"
                         Content="{x:Static resx:Resources.add}"
                         Padding="0"
-                        Margin="0" Click="Add_button_Click"/>
+                        Margin="0" Click="Add_button_Click"
+                        IsEnabled="False"
+                        x:FieldModifier="public"/>
 
             </StackPanel>
             

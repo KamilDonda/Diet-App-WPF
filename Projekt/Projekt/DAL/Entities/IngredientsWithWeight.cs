@@ -7,14 +7,14 @@ namespace Projekt.DAL.Entities
 {
     public class IngredientsWithWeight
     {
-        public int? ID { get; set; }
-        public string Name { get; private set; }
-        public double Kcal { get; private set; }
-        public double Protein { get; private set; }
-        public double Fat { get; private set; }
-        public double Carbs { get; private set; }
-        public string Type { get; private set; }
-        public double Weight { get; private set; }
+        public int? ID          { get; set; }
+        public string Name      { get; set; }
+        public double Kcal      { get; set; }
+        public double Protein   { get; set; }
+        public double Fat       { get; set; }
+        public double Carbs     { get; set; }
+        public string Type      { get; set; }
+        public double Weight    { get; set; }
 
         public IngredientsWithWeight(MySqlDataReader reader)
         {

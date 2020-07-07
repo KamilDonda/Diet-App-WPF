@@ -106,5 +106,11 @@ namespace Projekt
                 label.Content = PageList.Count;
             }
         }
+
+        public void SetVisibilityOn()
+        {
+            Diet_button.Visibility = Visibility.Visible;
+            Settings_button.Visibility = Visibility.Visible;
+        }
     }
 }

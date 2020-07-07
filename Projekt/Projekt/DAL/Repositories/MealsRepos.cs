@@ -41,5 +41,30 @@ namespace Projekt.DAL.Repositories
             }
             return condition;
         }
+
+        public static bool Update(Entities.Meals meals, int? id)
+        {
+            bool condition = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                var kcal = meals.Kcal.ToString().Replace(',', '.');
+                var protein = meals.Protein.ToString().Replace(',', '.');
+                var fat = meals.Fat.ToString().Replace(',', '.');
+                var carbs = meals.Carbs.ToString().Replace(',', '.');
+                var weight = meals.Weight.ToString().Replace(',', '.');
+
+                MySqlCommand command = new MySqlCommand($"UPDATE Meals SET WEIGHT={weight}, " +
+                    $"KCAL={kcal}, PROTEIN={protein}, FAT={fat}, CARBS={carbs}, " +
+                    $"DIETTYPE='{meals.DietType}' WHERE ID={id}", connection);
+                connection.Open();
+
+                var n = command.ExecuteNonQuery();
+                if (n == 1) 
+                    condition = true;
+
+                connection.Close();
+            }
+            return condition;
+        }
     }
 }

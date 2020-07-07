@@ -3,6 +3,7 @@ using System;
 using Projekt.DAL.Entities;
 using Projekt.DAL.Repositories;
 using System.IO;
+using System.Linq;
 
 namespace DatabaseInserter
 {
@@ -17,6 +18,7 @@ namespace DatabaseInserter
             //SetIngredients(ingredients);
             //SetMeals(meals);
             //SetContainers(contains);
+            //UpdateMeals();
         }
 
         static void SetIngredients(string filename)
@@ -90,6 +92,56 @@ namespace DatabaseInserter
                 Console.WriteLine($"{i}.");
 
                 ContainsRepos.Insert(newContain);
+            }
+        }
+
+        static void UpdateMeals()
+        {
+            var mealsRepos = MealsRepos.GetAll();
+
+            foreach(var meal in mealsRepos)
+            {
+                var ingredientsRepos = IngredientsRepos.GetByID(meal.ID.Value);
+
+                int n = ingredientsRepos.Count;
+
+                int? ID = meal.ID;
+                string Name = meal.Name;
+                double Kcal = 0;
+                double Prot = 0;
+                double Fat = 0;
+                double Carbs = 0;
+                double Weight = 0;
+                int[] Type = new int[n];
+
+                Console.WriteLine($"Meal no. {meal.ID.Value} - {Name}");
+
+                for (int j = 0; j < n; j++)
+                {
+                    Kcal += ingredientsRepos[j].Kcal;
+                    Prot += ingredientsRepos[j].Protein;
+                    Fat += ingredientsRepos[j].Fat;
+                    Carbs += ingredientsRepos[j].Carbs;
+                    Weight += ingredientsRepos[j].Weight;
+
+                    var t = ingredientsRepos[j].Type;
+
+                    if (t == Projekt.Properties.Resources.normal)
+                        Type[j] = 0;
+                    if (t == Projekt.Properties.Resources.vegetarian)
+                        Type[j] = 1;
+                    if (t == Projekt.Properties.Resources.vegan)
+                        Type[j] = 2;
+                    
+                    //Console.WriteLine(Type[j]);
+                }
+                var type = Type.Min().ToString();
+
+                //Console.WriteLine($"min: {type}");
+
+                var newMeal = new Meals(Name, Weight, Kcal, Prot, Fat, Carbs, type);
+
+                MealsRepos.Update(newMeal, ID);
             }
         }
     }

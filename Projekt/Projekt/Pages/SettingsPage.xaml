@@ -276,9 +276,14 @@
             <Button Background="Transparent"
                     BorderThickness="0"
                     VerticalAlignment="Center" Click="Apply_Click">
-                <Image Source="/Images/apply.png"
-                       Stretch="None"
-                       Margin="5"/>
+                <StackPanel>
+                    <Image Source="/Images/apply.png"
+                           Stretch="None"
+                           Margin="5"/>
+                    <TextBlock Text="{x:Static resx:Resources.save}"
+                               HorizontalAlignment="Center"
+                               FontSize="20"/>
+                </StackPanel>
             </Button>
 
         </StackPanel>

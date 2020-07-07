@@ -75,13 +75,13 @@ namespace Projekt
                 return (2 * weight);
 
             if (goal == 1)
-                return (1.3 * weight);
+                return (1.7 * weight);
 
-            return(1.6 * weight); 
+            return(1.8 * weight); 
         }
 
         private double GetTotalFat(double calories) // [grams]
-            => 0.2 * calories / 9; 
+            => 0.275 * calories / 9; 
 
         private double GetTotalCarbs(double calories, double proteins, double fat) // [grams]
             => (calories - (proteins * 4 + fat * 9)) / 4; 

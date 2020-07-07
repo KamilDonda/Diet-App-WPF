@@ -14,7 +14,7 @@
     <Grid>
 
         <StackPanel Orientation="Vertical"
-                    Width="700">
+                    Width="750">
 
             <TextBlock Text="{x:Static resx:Resources.meals}"
                        VerticalAlignment="Center"
@@ -68,7 +68,7 @@
                                             DisplayMemberBinding="{Binding Carbs}"
                                             Width="Auto"/>
                             <GridViewColumn Header="{x:Static resx:Resources.type }" 
-                                            DisplayMemberBinding="{Binding Type}"
+                                            DisplayMemberBinding="{Binding DietType}"
                                             Width="Auto"/>
                         </GridView>
                     </ListView.View>
@@ -124,6 +124,9 @@
                             <GridViewColumn Header="{x:Static resx:Resources.carbs }" 
                                             DisplayMemberBinding="{Binding Carbs}"
                                             Width="Auto"/>
+                            <!--<GridViewColumn Header="{x:Static resx:Resources.type }" 
+                                            DisplayMemberBinding="{Binding Type}"
+                                            Width="Auto"/>-->
                             <GridViewColumn Header="{x:Static resx:Resources.weightItem }" 
                                             DisplayMemberBinding="{Binding Weight}"
                                             Width="Auto"/>

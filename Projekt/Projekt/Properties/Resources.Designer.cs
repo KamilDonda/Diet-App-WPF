@@ -205,6 +205,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Nie udalo się utworzyć użytkownika!.
+        /// </summary>
+        public static string errorCreateUser {
+            get {
+                return ResourceManager.GetString("errorCreateUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Hasła nie są takie same!.
         /// </summary>
         public static string errorDifferentPasswords {
@@ -249,6 +258,15 @@ namespace Projekt.Properties {
         public static string errorIsCorrectLong {
             get {
                 return ResourceManager.GetString("errorIsCorrectLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Podany użytkownik nie istnieje!.
+        /// </summary>
+        public static string errorUserDoesNotExist {
+            get {
+                return ResourceManager.GetString("errorUserDoesNotExist", resourceCulture);
             }
         }
         
@@ -411,6 +429,15 @@ namespace Projekt.Properties {
         public static string protein {
             get {
                 return ResourceManager.GetString("protein", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Zapisz.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
             }
         }
         

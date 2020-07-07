@@ -5,6 +5,7 @@ using System.Windows;
 using System.Linq;
 using MySqlX.XDevAPI.Common;
 using System.Security.Cryptography;
+using Projekt.DAL.Repositories;
 
 namespace Projekt
 {
@@ -15,8 +16,22 @@ namespace Projekt
         public static readonly int MinLoginLength = 5;
         public static readonly int MaxLoginLength = 10;
 
+        public static bool LOGIN_STATUS = false;
+
+        private static string login = "";
+        public static string UserLogin
+        {
+            get { return login; } 
+            set { login = value; }
+        }
+
         public static bool CheckPasswords(string p1, string p2)
         {
+            if(p2 == "" && p1 != "")
+                MessageBox.Show(Properties.Resources.errorUserDoesNotExist,
+                    Properties.Resources.warning);
+
+            else
             if (p1 != p2)
                 MessageBox.Show(Properties.Resources.errorDifferentPasswords,
                     Properties.Resources.warning);
@@ -84,6 +99,21 @@ namespace Projekt
                     .GetBytes(password)))
                     .Replace("-", "");
             }
+        }
+
+        public static string GetPassword(string login)
+        {
+            var Users = UsersRepos.GetAll();
+            string password = "";
+
+            foreach (var user in Users)
+                if (login == user.Login)
+                {
+                    password = user.Password;
+                    break;
+                }
+
+            return password;
         }
     }
 }
