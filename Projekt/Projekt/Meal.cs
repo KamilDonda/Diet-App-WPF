@@ -21,12 +21,15 @@ namespace Projekt
             this.Carbs = carbs;
             this.TotalGrams = Proteins + Fat + Carbs;
             this.Kcal = Proteins * 4 + Fat * 9 + Carbs * 4;
+        }
 
-            Debug.WriteLine(
+        public override string ToString()
+        {
+            return 
                 $"\nProteins  {Proteins.ToString("0.##")} g = {(Proteins * 4).ToString("0.##")} Kcal" +
                 $"\nFat       {Fat.ToString("0.##")} g = {(Fat * 9).ToString("0.##")} Kcal" +
                 $"\nCarbs     {Carbs.ToString("0.##")} g = {(Carbs * 4).ToString("0.##")} Kcal" +
-                $"\nTotalgram {TotalGrams.ToString("0.##")} g = {Kcal.ToString("0.##")} Kcal");
+                $"\nTotalgram {TotalGrams.ToString("0.##")} g = {Kcal.ToString("0.##")} Kcal";
         }
     }
 }

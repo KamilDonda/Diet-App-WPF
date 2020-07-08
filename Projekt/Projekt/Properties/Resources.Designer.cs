@@ -196,6 +196,15 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dzień .
+        /// </summary>
+        public static string day {
+            get {
+                return ResourceManager.GetString("day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dieta.
         /// </summary>
         public static string diet {
@@ -276,6 +285,15 @@ namespace Projekt.Properties {
         public static string fat {
             get {
                 return ResourceManager.GetString("fat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Generuj posiłki.
+        /// </summary>
+        public static string generateMeals {
+            get {
+                return ResourceManager.GetString("generateMeals", resourceCulture);
             }
         }
         

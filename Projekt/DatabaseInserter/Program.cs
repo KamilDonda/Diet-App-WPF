@@ -18,7 +18,7 @@ namespace DatabaseInserter
             //SetIngredients(ingredients);
             //SetMeals(meals);
             //SetContainers(contains);
-            //UpdateMeals();
+            UpdateMeals();
         }
 
         static void SetIngredients(string filename)
@@ -118,10 +118,12 @@ namespace DatabaseInserter
 
                 for (int j = 0; j < n; j++)
                 {
-                    Kcal += ingredientsRepos[j].Kcal;
-                    Prot += ingredientsRepos[j].Protein;
-                    Fat += ingredientsRepos[j].Fat;
-                    Carbs += ingredientsRepos[j].Carbs;
+                    var weight = ingredientsRepos[j].Weight;
+
+                    Kcal += ingredientsRepos[j].Kcal * weight * 0.01;
+                    Prot += ingredientsRepos[j].Protein * weight * 0.01;
+                    Fat += ingredientsRepos[j].Fat * weight * 0.01;
+                    Carbs += ingredientsRepos[j].Carbs * weight * 0.01;
                     Weight += ingredientsRepos[j].Weight;
 
                     var t = ingredientsRepos[j].Type;

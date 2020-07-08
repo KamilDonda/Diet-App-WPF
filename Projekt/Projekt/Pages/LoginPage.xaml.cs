@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -36,25 +37,19 @@ namespace Projekt
             var hash = Login.HashPassword(password);
             var hashFromDB = Login.GetPassword(login);
 
-            Debug.WriteLine(
-                $"\nLogin     {login}" +
-                $"\nPassword  {password}" +
-                $"\nHash      {hash}" +
-                $"\nHashDB    {hashFromDB}");
-
-            SettingsPage newPage = new SettingsPage();
-
             if (Login.CheckPasswords(hash, hashFromDB))
             {
+                Login.LOGIN_STATUS = true;
+                Login.UserLogin = login;
+                Debug.WriteLine($"LOGIN: {Login.UserLogin}");
+
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
                         (window as MainWindow).SetVisibilityOn();
                 }
 
-                Login.LOGIN_STATUS = true;
-                Login.UserLogin = login;
-
+                SettingsPage newPage = new SettingsPage();
                 NavigationService.Navigate(newPage);
             }
         }

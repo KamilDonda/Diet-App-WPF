@@ -8,6 +8,8 @@ namespace Projekt
 {
     class Meals
     {
+        private double Kcal, Proteins, Fat, Carbs, TotalGrams;
+
         private static double[][] mealsMatrix = new double[][]
         {
             new double[]{ 0.5, 0.5 },
@@ -34,8 +36,6 @@ namespace Projekt
 
             for (int i = 0; i < mealCount; i++)
             {
-                Debug.WriteLine($"\n\n = = = Meal {i}: = = =");
-
                 ListOfMeals.Add(
                     new Meal(
                         dietType,
@@ -50,11 +50,10 @@ namespace Projekt
                 Carbs      += ListOfMeals[i].Carbs;
                 TotalGrams += ListOfMeals[i].TotalGrams;
             }
-            Debug.WriteLine($"\nTOTAL:" +
-                            $"\nProteins  {Proteins.ToString("0.##")} g = {(Proteins * 4).ToString("0.##")} Kcal" +
-                            $"\nFat       {Fat.ToString("0.##")} g = {(Fat * 9).ToString("0.##")} Kcal" +
-                            $"\nCarbs     {Carbs.ToString("0.##")} g = {(Carbs * 4).ToString("0.##")} Kcal" +
-                            $"\nTotalgram {TotalGrams.ToString("0.##")} g = {Kcal.ToString("0.##")} Kcal");
+
+            this.Kcal = Kcal; this.Fat = Fat; 
+            this.Proteins = Proteins; 
+            this.Carbs = Carbs; this.TotalGrams = TotalGrams;
         }
 
         private double []GetMacroArray(int mealCount, double macro)
@@ -84,7 +83,15 @@ namespace Projekt
             => 0.275 * calories / 9; 
 
         private double GetTotalCarbs(double calories, double proteins, double fat) // [grams]
-            => (calories - (proteins * 4 + fat * 9)) / 4; 
-        
+            => (calories - (proteins * 4 + fat * 9)) / 4;
+
+        public override string ToString()
+        {
+            return $"\nTOTAL:" +
+                   $"\nProteins  {Proteins.ToString("0.##")} g = {(Proteins * 4).ToString("0.##")} Kcal" +
+                   $"\nFat       {Fat.ToString("0.##")} g = {(Fat * 9).ToString("0.##")} Kcal" +
+                   $"\nCarbs     {Carbs.ToString("0.##")} g = {(Carbs * 4).ToString("0.##")} Kcal" +
+                   $"\nTotalgram {TotalGrams.ToString("0.##")} g = {Kcal.ToString("0.##")} Kcal";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekt.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -53,5 +54,60 @@ namespace Projekt
                 return (int)(TMR * 1.1);
             return TMR;
         }
+
+        public static DAL.Entities.Meals GetMostSimilarMeal(Meal x, List<DAL.Entities.Meals> ListOfMeals)
+        {
+            var P = new List<double>();
+            var ListOfID = new List<int>();
+
+            DAL.Entities.Meals meal = null;
+
+            foreach (var y in ListOfMeals)
+            {
+                P.Add(GetDistance(x, y));
+                ListOfID.Add(Convert.ToInt32(y.ID));
+            }
+
+            var sortedList = SortedList(ListOfID, P);
+
+            foreach (var y in ListOfMeals)
+            {
+                if(y.ID == sortedList[0])
+                {
+                    meal = y;
+                    break;
+                }
+            }
+
+            return meal;
+
+        }
+
+        private static double GetDistance(Meal x, DAL.Entities.Meals y)
+            =>  Math.Sqrt(
+                Math.Pow(x.Carbs - Convert.ToDouble(y.Carbs), 2) +
+                Math.Pow(x.Fat - Convert.ToDouble(y.Fat), 2) +
+                Math.Pow(x.Kcal - Convert.ToDouble(y.Kcal), 2) +
+                Math.Pow(x.Proteins - Convert.ToDouble(y.Protein), 2));
+
+        private static List<int> SortedList(List<int> listToSort, List<double> p)
+        {
+            int n = p.Count;
+            for (int i = 0; i < n - 1; i++)
+                for (int j = 0; j < n - i - 1; j++)
+                    if (p[j] > p[j + 1])
+                    {
+                        var temp = p[j];
+                        var Temp = listToSort[j];
+
+                        p[j] = p[j + 1];
+                        listToSort[j] = listToSort[j + 1];
+
+                        p[j + 1] = temp;
+                        listToSort[j + 1] = Temp;
+                    }
+            return listToSort;
+        }
+
     }
 }

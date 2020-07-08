@@ -61,5 +61,28 @@ namespace Projekt.DAL.Entities
             DietType = diettype;
             MealsCount = mealscount;
         }
+
+        public Users(Users user)
+        {
+            Login = user.Login;
+            Name = user.Name;
+            Surname = user.Surname;
+            Age = user.Age;           
+            Height = user.Height;      
+            Weight = user.Weight;       
+            Goal = user.Goal;   
+            Sex = user.Sex;      
+            ActivityLevel = user.ActivityLevel; 
+            Kcal = user.Kcal;   
+            DietType = user.DietType;   
+            MealsCount = user.MealsCount;
+            Password = user.Password;
+        }
+
+        public override string ToString()
+        {
+            return $"{Login}, {Name}, {Surname}, {Age}, {Height}, {Weight}, " +
+                $"{Goal}, {Sex}, {ActivityLevel}, {Kcal}, {DietType}, {MealsCount}, {Password}";
+        }
     }
 }

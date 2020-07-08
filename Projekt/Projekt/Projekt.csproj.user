@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="OneDay.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\DietPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -30,9 +27,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="OneDay.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\DietPage.xaml">
       <SubType>Designer</SubType>
     </Page>

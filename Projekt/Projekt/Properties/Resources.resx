@@ -162,6 +162,9 @@
   <data name="dailyCalories" xml:space="preserve">
     <value>Zapotrzebowanie dzienne [Kcal]</value>
   </data>
+  <data name="day" xml:space="preserve">
+    <value>Dzień </value>
+  </data>
   <data name="diet" xml:space="preserve">
     <value>Dieta</value>
   </data>
@@ -191,6 +194,9 @@
   </data>
   <data name="fat" xml:space="preserve">
     <value>Tłuszcze [g]</value>
+  </data>
+  <data name="generateMeals" xml:space="preserve">
+    <value>Generuj posiłki</value>
   </data>
   <data name="goal" xml:space="preserve">
     <value>Cel</value>

@@ -72,6 +72,8 @@ namespace Projekt.Pages
             ActivityLevel_combobox.ItemsSource = listOfActivities();
             Goal_combobox.ItemsSource          = listOfGoals();
             MealsCount_combobox.ItemsSource    = countOfMeals();
+
+            SetData();
         }
 
         private void Apply_Click(object sender, RoutedEventArgs e)
@@ -162,6 +164,69 @@ namespace Projekt.Pages
                 $"\nDailyCalories {DailyCalories}";
 
             Debug.WriteLine(s);
+        }
+
+        private void SetData()
+        {
+            var UserList = UsersRepos.GetAll();
+
+            Users User = null;
+
+            foreach (var user in UserList)
+            {
+                if(Login.UserLogin == user.Login)
+                {
+                    User = new Users(user);
+                    break;
+                }
+            }
+
+            if(User != null)
+            {
+                Name_textbox.Text = User.Name;
+                Surname_textbox.Text = User.Surname;
+                Age_textbox.Text = User.Age.ToString();
+                Height_textbox.Text = User.Height.ToString();
+                Weight_textbox.Text = User.Weight.ToString();
+                DailyCalories_textblock.Text = User.Kcal.ToString();
+                MealsCount_combobox.SelectedItem = Convert.ToInt32(User.MealsCount);
+                ActivityLevel_combobox.SelectedIndex = Convert.ToInt32(User.ActivityLevel);
+                Goal_combobox.SelectedIndex = Convert.ToInt32(User.Goal);
+
+                if (User.Sex == 0)
+                {
+                    woman_radiobutton.IsChecked = true;
+                    Sex = false;
+                }
+                if (User.Sex == 1)
+                {
+                    man_radiobutton.IsChecked = true;
+                    Sex = true;
+                }
+
+                if (User.DietType == 0)
+                    normal_radiobutton.IsChecked = true;
+                if (User.DietType == 1)
+                    vegetarian_radiobutton.IsChecked = true;
+                if (User.DietType == 2)
+                    vegan_radiobutton.IsChecked = true;
+
+                Height = Convert.ToDouble(User.Height);
+                Weight = Convert.ToDouble(User.Weight);
+                Age = Convert.ToUInt32(User.Age);
+                ActivityLevel = Convert.ToUInt32(User.ActivityLevel);
+
+                BMI = MathOperations.getBMI(Height, Weight);
+                BMR = MathOperations.getBMR(Height, Weight, Convert.ToInt32(Age), Sex);
+                TMR = MathOperations.getTMR(Convert.ToInt32(ActivityLevel), BMR);
+
+                BMI_textblock.Text = BMI.ToString("0.##");
+                BMR_textblock.Text = BMR.ToString();
+                TMR_textblock.Text = TMR.ToString();
+
+                Login.CurrentUser = User;
+            }
+
         }
     }
 }

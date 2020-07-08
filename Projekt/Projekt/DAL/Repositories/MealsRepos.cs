@@ -9,7 +9,7 @@ namespace Projekt.DAL.Repositories
     public class MealsRepos
     {
         private const string GET_ALL = "SELECT * FROM MEALS";
-        private const string INSERT = "INSERT INTO Meals VALUES ";
+        private const string INSERT = "INSERT INTO MEALS VALUES ";
 
         public static List<Entities.Meals> GetAll()
         {

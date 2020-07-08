@@ -57,6 +57,7 @@ namespace Projekt.DAL.Entities
         public Meals(Meals meals)
         {
             ID = meals.ID;
+            Weight = meals.Weight;
             Name = meals.Name;
             Kcal = meals.Kcal;
             Protein = meals.Protein;
@@ -78,6 +79,11 @@ namespace Projekt.DAL.Entities
         public string ToInsertOnlyName()
         {
             return $"('{ID}', '{Name}')";
+        }
+
+        public override string ToString()
+        {
+            return $"{ID}, {Name}, {Weight}, {Kcal}, {Protein}, {Fat}, {Carbs}, {DietType}";
         }
     }
 }

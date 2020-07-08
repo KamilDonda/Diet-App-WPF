@@ -6,6 +6,7 @@ using System.Linq;
 using MySqlX.XDevAPI.Common;
 using System.Security.Cryptography;
 using Projekt.DAL.Repositories;
+using Projekt.DAL.Entities;
 
 namespace Projekt
 {
@@ -17,6 +18,8 @@ namespace Projekt
         public static readonly int MaxLoginLength = 10;
 
         public static bool LOGIN_STATUS = false;
+
+        public static Users CurrentUser;
 
         private static string login = "";
         public static string UserLogin
