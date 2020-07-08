@@ -33,7 +33,6 @@ namespace Projekt.DAL.Repositories
                 var command_CreateUser       = new MySqlCommand($"CREATE USER '{Login}' IDENTIFIED BY '{Password}'", connection);
                 var command_GrantContains    = new MySqlCommand($"GRANT SELECT ON CONTAINS TO '{Login}'", connection);
                 var command_GrantDiet        = new MySqlCommand($"GRANT SELECT ON DIET TO '{Login}'", connection);
-                var command_GrantHistory     = new MySqlCommand($"GRANT SELECT ON HISTORY TO '{Login}'", connection);
                 var command_GrantIngredients = new MySqlCommand($"GRANT SELECT ON INGREDIENTS TO '{Login}'", connection);
                 var command_GrantMeals       = new MySqlCommand($"GRANT SELECT ON MEALS TO '{Login}'", connection);
                 var command_AddUser          = new MySqlCommand($"INSERT INTO USERS (LOGIN, PASSWORD, AGE, HEIGHT, WEIGHT, KCAL) VALUES (" +
@@ -43,7 +42,6 @@ namespace Projekt.DAL.Repositories
                 command_CreateUser.ExecuteNonQuery();
                 command_GrantContains.ExecuteNonQuery();
                 command_GrantDiet.ExecuteNonQuery();
-                command_GrantHistory.ExecuteNonQuery();
                 command_GrantIngredients.ExecuteNonQuery();
                 command_GrantMeals.ExecuteNonQuery();
                 command_AddUser.ExecuteNonQuery();
