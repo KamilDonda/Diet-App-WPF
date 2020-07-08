@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Projekt")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DietApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Projekt")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Projekt")]
+[assembly: System.Reflection.AssemblyProductAttribute("DietApp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DietApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

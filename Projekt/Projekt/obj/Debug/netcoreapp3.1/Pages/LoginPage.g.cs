@@ -86,7 +86,7 @@ namespace Projekt {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projekt;component/pages/loginpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DietApp;component/pages/loginpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\LoginPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

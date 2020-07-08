@@ -121,7 +121,7 @@ namespace Projekt.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projekt;component/pages/ingredientspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DietApp;component/pages/ingredientspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\IngredientsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

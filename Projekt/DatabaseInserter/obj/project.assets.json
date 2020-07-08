@@ -1701,7 +1701,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "Projekt/1.0.0": {
+      "DietApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1709,10 +1709,10 @@
           "System.Windows.Interactivity.WPF": "2.0.20525"
         },
         "compile": {
-          "bin/placeholder/Projekt.dll": {}
+          "bin/placeholder/DietApp.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Projekt.dll": {}
+          "bin/placeholder/DietApp.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -5987,7 +5987,7 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "Projekt/1.0.0": {
+    "DietApp/1.0.0": {
       "type": "project",
       "path": "../Projekt/Projekt.csproj",
       "msbuildProject": "../Projekt/Projekt.csproj"
@@ -5995,8 +5995,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "MySql.Data >= 8.0.20",
-      "Projekt >= 1.0.0"
+      "DietApp >= 1.0.0",
+      "MySql.Data >= 8.0.20"
     ]
   },
   "packageFolders": {
