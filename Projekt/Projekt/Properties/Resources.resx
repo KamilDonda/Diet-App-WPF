@@ -160,7 +160,7 @@
     <value>Utwórz konto</value>
   </data>
   <data name="dailyCalories" xml:space="preserve">
-    <value>Zapotrzebowanie dzienne [Kcal]</value>
+    <value>Proponowana kaloryka [Kcal]</value>
   </data>
   <data name="day" xml:space="preserve">
     <value>Dzień </value>

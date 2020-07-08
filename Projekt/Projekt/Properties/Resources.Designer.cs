@@ -187,7 +187,7 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Zapotrzebowanie dzienne [Kcal].
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Proponowana kaloryka [Kcal].
         /// </summary>
         public static string dailyCalories {
             get {
