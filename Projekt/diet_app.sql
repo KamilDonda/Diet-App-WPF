@@ -62,7 +62,7 @@ CREATE TABLE `diet` (
   KEY `id_meals` (`id_meals`),
   CONSTRAINT `diet_ibfk_1` FOREIGN KEY (`login`) REFERENCES `users` (`login`),
   CONSTRAINT `diet_ibfk_2` FOREIGN KEY (`id_meals`) REFERENCES `meals` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,34 +71,8 @@ CREATE TABLE `diet` (
 
 LOCK TABLES `diet` WRITE;
 /*!40000 ALTER TABLE `diet` DISABLE KEYS */;
-INSERT INTO `diet` VALUES (153,'donda1',30,'1'),(154,'donda1',30,'2'),(155,'donda1',30,'3'),(176,'donda',14,'1'),(177,'donda',14,'2');
+INSERT INTO `diet` VALUES (153,'donda1',30,'1'),(154,'donda1',30,'2'),(155,'donda1',30,'3'),(182,'donda',2,'1'),(183,'donda',18,'2'),(184,'donda',10,'3'),(185,'donda',34,'4'),(186,'donda',20,'5');
 /*!40000 ALTER TABLE `diet` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `history`
---
-
-DROP TABLE IF EXISTS `history`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `history` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `day` enum('0','1','2','3','4','5','6') COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_diet` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_diet` (`id_diet`),
-  CONSTRAINT `history_ibfk_1` FOREIGN KEY (`id_diet`) REFERENCES `diet` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `history`
---
-
-LOCK TABLES `history` WRITE;
-/*!40000 ALTER TABLE `history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -191,7 +165,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('donda','Kamil','Donda',21,175,71,'1','1','1',2299,'0','2','E2CCA93D09F1D606A8400F415E1B708F1216DA8D5C57A3416883C4A0A78E6C3F'),('donda1','','',0,0,0,'1','1','2',7,'0','3','E2CCA93D09F1D606A8400F415E1B708F1216DA8D5C57A3416883C4A0A78E6C3F');
+INSERT INTO `users` VALUES ('donda','Kamil','Donda',21,175,71,'1','1','1',2299,'0','5','E2CCA93D09F1D606A8400F415E1B708F1216DA8D5C57A3416883C4A0A78E6C3F'),('donda1','','',0,0,0,'1','1','2',7,'0','3','E2CCA93D09F1D606A8400F415E1B708F1216DA8D5C57A3416883C4A0A78E6C3F');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -204,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-08 17:35:52
+-- Dump completed on 2020-07-08 19:14:30
