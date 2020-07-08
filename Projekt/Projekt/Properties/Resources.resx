@@ -138,6 +138,12 @@
   <data name="add" xml:space="preserve">
     <value>Dodaj ≻</value>
   </data>
+  <data name="addIngredient" xml:space="preserve">
+    <value>Dodaj składnik ≻</value>
+  </data>
+  <data name="addMeal" xml:space="preserve">
+    <value>Dodaj posiłek ≻</value>
+  </data>
   <data name="age" xml:space="preserve">
     <value>Wiek</value>
   </data>

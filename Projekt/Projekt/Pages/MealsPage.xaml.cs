@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,6 +27,9 @@ namespace Projekt.Pages
             InitializeComponent();
             var mealsRepos = MealsRepos.GetAll();
             Meals_listview.ItemsSource = mealsRepos; 
+
+            if(Login.LOGIN_STATUS)
+                Meals_stackpanel.IsEnabled = true;       
         }
 
         private void Meals_Click(object sender, RoutedEventArgs e)
@@ -33,6 +37,9 @@ namespace Projekt.Pages
             var index = (sender as ListView).SelectedIndex + 1;
             var ingredientsRepos = IngredientsRepos.GetByID(index);
             Ingredients_listview.ItemsSource = ingredientsRepos;
+
+            if(Login.LOGIN_STATUS)
+                Ingredient_stackpanel.IsEnabled = true;
 
             //double Kcal = 0;
             //double Prot = 0;
@@ -52,6 +59,22 @@ namespace Projekt.Pages
             //Debug.WriteLine($"{Kcal}, {Prot}, {Fat}, {Carbs}, {Weight}");
         }
 
-        
+        private void Meal_button_Click(object sender, RoutedEventArgs e)
+        {
+            var name = MealName_textbox.Text;
+
+            MealsRepos.Insert(new DAL.Entities.Meals(name, 0, 0, 0, 0, 0, "0"));
+        }
+
+        private void Ingredient_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.,]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
     }
 }

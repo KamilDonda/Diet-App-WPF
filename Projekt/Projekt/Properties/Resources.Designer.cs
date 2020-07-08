@@ -124,6 +124,24 @@ namespace Projekt.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dodaj składnik ≻.
+        /// </summary>
+        public static string addIngredient {
+            get {
+                return ResourceManager.GetString("addIngredient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dodaj posiłek ≻.
+        /// </summary>
+        public static string addMeal {
+            get {
+                return ResourceManager.GetString("addMeal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Wiek.
         /// </summary>
         public static string age {

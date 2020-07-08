@@ -21,7 +21,7 @@
                        HorizontalAlignment="Center"
                        FontSize="20"/>
 
-            <Grid Height="450"
+            <Grid Height="380"
                   Margin="0 10 0 10">
 
                 <ListView x:Name="Meals_listview"
@@ -136,6 +136,62 @@
                 </ListView>
 
             </Grid>
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+            
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="20"
+                            x:Name="Meals_stackpanel"
+                            IsEnabled="False">
+
+                    <StackPanel Orientation="Vertical">
+
+                        <TextBlock Text="{x:Static resx:Resources.itemName}"
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="MealName_textbox"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Width="160"/>
+
+                    </StackPanel>
+
+                    <Button x:Name="Meal_button"
+                            Content="{x:Static resx:Resources.addMeal}"
+                            Width="100" Click="Meal_button_Click"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="20"
+                            IsEnabled="False"
+                            x:Name="Ingredient_stackpanel">
+
+                    <StackPanel Orientation="Vertical">
+
+                        <TextBlock Text="{x:Static resx:Resources.id}"
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="IngredientName_textbox"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Width="60"/>
+
+                    </StackPanel>
+
+                    <Button x:Name="Ingredient_button"
+                            Content="{x:Static resx:Resources.addIngredient}"
+                            Width="100" Click="Ingredient_button_Click"/>
+
+                </StackPanel>
+
+            </StackPanel>
 
         </StackPanel>
 

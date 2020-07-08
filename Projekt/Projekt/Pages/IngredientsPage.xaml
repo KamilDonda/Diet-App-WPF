@@ -75,7 +75,9 @@
 
             <StackPanel Width="700"
                         Height="34"
-                        Orientation="Horizontal">
+                        Orientation="Horizontal"
+                        x:Name="Ingredients_stackpanel"
+                        IsEnabled="False">
 
                 <StackPanel>
                 
@@ -154,9 +156,7 @@
                         Width="80"
                         Content="{x:Static resx:Resources.add}"
                         Padding="0"
-                        Margin="0" Click="Add_button_Click"
-                        IsEnabled="False"
-                        x:FieldModifier="public"/>
+                        Margin="0" Click="Add_button_Click"/>
 
             </StackPanel>
             

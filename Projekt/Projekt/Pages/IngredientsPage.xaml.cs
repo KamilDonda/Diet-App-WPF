@@ -30,7 +30,7 @@ namespace Projekt.Pages
             DietType_combobox.ItemsSource = listOfDietType();
 
             if(Login.LOGIN_STATUS)
-                Add_button.IsEnabled = true;
+                Ingredients_stackpanel.IsEnabled = true;
         }
 
         private void Add_button_Click(object sender, RoutedEventArgs e)
