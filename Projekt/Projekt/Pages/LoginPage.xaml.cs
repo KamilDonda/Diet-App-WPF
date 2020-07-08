@@ -41,12 +41,11 @@ namespace Projekt
             {
                 Login.LOGIN_STATUS = true;
                 Login.UserLogin = login;
-                Debug.WriteLine($"LOGIN: {Login.UserLogin}");
 
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
-                        (window as MainWindow).SetVisibilityOn();
+                        (window as MainWindow).SetVisibilityAfterLogin();
                 }
 
                 SettingsPage newPage = new SettingsPage();

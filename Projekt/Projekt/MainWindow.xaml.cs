@@ -40,8 +40,6 @@ namespace Projekt
             {
                 PageList.Remove(PageList.Last());
                 Main.Content = PageList.Last();
-                
-                label.Content = PageList.Count;
             }
         }
 
@@ -97,20 +95,21 @@ namespace Projekt
 
         #endregion
 
+        //Open new page
         private void NewPage(Page newPage)
         {
             if (newPage.ToString() != Main.Content.ToString())
             {
                 PageList.Add(Main.Content);
                 Main.Content = newPage;
-                label.Content = PageList.Count;
             }
         }
 
-        public void SetVisibilityOn()
+        public void SetVisibilityAfterLogin()
         {
             Diet_button.Visibility = Visibility.Visible;
             Settings_button.Visibility = Visibility.Visible;
+            Login_button.IsEnabled = false;
         }
     }
 }

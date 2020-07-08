@@ -22,7 +22,7 @@
                         Height="550">
 
                 <TextBlock x:Name="Day_textblock"
-                           Text="{x:Static resx:Resources.day}"
+                           Text="{x:Static resx:Resources.diet}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontSize="50"/>
@@ -38,7 +38,7 @@
                     <ListView x:Name="Meals_listview"
                               ScrollViewer.VerticalScrollBarVisibility="Visible"
                               ScrollViewer.CanContentScroll="False"
-                              >
+                              PreviewMouseLeftButtonUp="Meals_Click">
 
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">

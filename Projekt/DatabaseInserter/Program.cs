@@ -18,7 +18,7 @@ namespace DatabaseInserter
             //SetIngredients(ingredients);
             //SetMeals(meals);
             //SetContainers(contains);
-            UpdateMeals();
+            //UpdateMeals();
         }
 
         static void SetIngredients(string filename)
@@ -85,7 +85,6 @@ namespace DatabaseInserter
                 int id_meals = Convert.ToInt32(value[0]);
                 int id_ingredients = Convert.ToInt32(value[1]);
                 double weight = Convert.ToDouble(value[2].Replace('.', ','));
-
 
                 var newContain = new Contains(id_meals, id_ingredients, weight);
 

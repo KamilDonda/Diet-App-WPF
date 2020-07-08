@@ -117,22 +117,26 @@
                         <TextBox x:Name="Kcal_textbox"
                                  Width="50"
                                  VerticalAlignment="Center" 
-                                 HorizontalAlignment="Center"/>
+                                 HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidation"/>
 
                         <TextBox x:Name="Protein_textbox"
                                  Width="70"
                                  VerticalAlignment="Center" 
-                                 HorizontalAlignment="Center"/>
+                                 HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidation"/>
 
                         <TextBox x:Name="Fat_textbox"
                                  Width="70"
                                  VerticalAlignment="Center" 
-                                 HorizontalAlignment="Center"/>
+                                 HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidation"/>
 
                         <TextBox x:Name="Carbs_textbox"
                                  Width="120"
                                  VerticalAlignment="Center" 
-                                 HorizontalAlignment="Center"/>
+                                 HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidation"/>
 
                         <ComboBox x:Name="DietType_combobox"
                                   Width="150"

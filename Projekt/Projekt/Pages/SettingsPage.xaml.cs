@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Linq;
 using Projekt.DAL.Entities;
 using Projekt.DAL.Repositories;
+using System.Threading;
 
 namespace Projekt.Pages
 {
@@ -215,6 +216,7 @@ namespace Projekt.Pages
                 Weight = Convert.ToDouble(User.Weight);
                 Age = Convert.ToUInt32(User.Age);
                 ActivityLevel = Convert.ToUInt32(User.ActivityLevel);
+                DietType = Convert.ToUInt32(DietCheck());
 
                 BMI = MathOperations.getBMI(Height, Weight);
                 BMR = MathOperations.getBMR(Height, Weight, Convert.ToInt32(Age), Sex);
@@ -226,7 +228,6 @@ namespace Projekt.Pages
 
                 Login.CurrentUser = User;
             }
-
         }
     }
 }

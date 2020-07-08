@@ -12,10 +12,10 @@ namespace Projekt
 
         private static double[][] mealsMatrix = new double[][]
         {
-            new double[]{ 0.5, 0.5 },
+            new double[]{ 0.45, 0.55 },
             new double[]{ 0.3, 0.45, 0.25 },
-            new double[]{ 0.25, 0.2, 0.3, 0.25 },
-            new double[]{ 0.2, 0.15, 0.3, 0.15, 0.2 }
+            new double[]{ 0.28, 0.15, 0.35, 0.22 },
+            new double[]{ 0.24, 0.12, 0.3, 0.16, 0.2 }
         };
 
         public List<Meal> ListOfMeals { get; private set; } = new List<Meal>();

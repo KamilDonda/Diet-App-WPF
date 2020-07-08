@@ -8,7 +8,7 @@ namespace Projekt.DAL.Repositories
     class DietRepos
     {
         private const string GET_ALL = "SELECT * FROM DIET";
-        private const string INSERT = "INSERT INTO DIET VALUES ";
+        private const string INSERT = "REPLACE INTO DIET VALUES ";
 
         public static List<Entities.Diet> GetAll()
         {
@@ -41,13 +41,12 @@ namespace Projekt.DAL.Repositories
             return condition;
         }
 
-        public static bool Update(Entities.Diet diet)
+        public static bool Delete(string login)
         {
             bool condition = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand($"UPDATE DIET SET LOGIN={diet.Login}, " +
-                    $"DAY={diet.Day}, ID_MEALS={diet.ID_Meal} WHERE ID={diet.ID}", connection);
+                MySqlCommand command = new MySqlCommand($"DELETE FROM DIET WHERE LOGIN='{login}'", connection);
                 connection.Open();
 
                 var n = command.ExecuteNonQuery();

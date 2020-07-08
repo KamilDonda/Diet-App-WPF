@@ -2,22 +2,13 @@
 using Projekt.DAL.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Projekt.Pages
 {
-    /// <summary>
-    /// Logika interakcji dla klasy IngredientsPage.xaml
-    /// </summary>
     public partial class IngredientsPage : Page
     {
         private static List<string> listOfDietType()
@@ -34,8 +25,7 @@ namespace Projekt.Pages
         public IngredientsPage()
         {
             InitializeComponent();
-            var ingredientsRepos = IngredientsRepos.GetAll();
-            Ingredients_listview.ItemsSource = ingredientsRepos;
+            Ingredients_listview.ItemsSource = IngredientsRepos.GetAll();
 
             DietType_combobox.ItemsSource = listOfDietType();
 
@@ -45,16 +35,32 @@ namespace Projekt.Pages
 
         private void Add_button_Click(object sender, RoutedEventArgs e)
         {
-            string name = Name_textbox.Text;
-            double kcal = Convert.ToDouble(Kcal_textbox.Text.Replace('.', ','));
-            double protein = Convert.ToDouble(Protein_textbox.Text.Replace('.', ','));
-            double fat = Convert.ToDouble(Fat_textbox.Text.Replace('.', ','));
-            double carbs = Convert.ToDouble(Carbs_textbox.Text.Replace('.', ','));
-            string type = DietType_combobox.SelectedIndex.ToString();
+            try 
+            { 
+                string name = Name_textbox.Text;
+                double kcal = Convert.ToDouble(Kcal_textbox.Text.Replace('.', ','));
+                double protein = Convert.ToDouble(Protein_textbox.Text.Replace('.', ','));
+                double fat = Convert.ToDouble(Fat_textbox.Text.Replace('.', ','));
+                double carbs = Convert.ToDouble(Carbs_textbox.Text.Replace('.', ','));
+                string type = DietType_combobox.SelectedIndex.ToString();
 
-            var newIngredient = new Ingredients(name, kcal, protein, fat, carbs, type);
+                var newIngredient = new Ingredients(name, kcal, protein, fat, carbs, type);
 
-            IngredientsRepos.Insert(newIngredient);
+                IngredientsRepos.Insert(newIngredient);
+
+                Ingredients_listview.ItemsSource = IngredientsRepos.GetAll();
+                Ingredients_listview.Items.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show(Properties.Resources.errorEmptyDatas, Properties.Resources.warning);
+            }
+        }
+
+        private void NumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.,]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

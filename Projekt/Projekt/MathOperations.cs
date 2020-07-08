@@ -1,6 +1,7 @@
 ﻿using Projekt.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Projekt
@@ -55,14 +56,21 @@ namespace Projekt
             return TMR;
         }
 
-        public static DAL.Entities.Meals GetMostSimilarMeal(Meal x, List<DAL.Entities.Meals> ListOfMeals)
+        public static DAL.Entities.Meals GetMostSimilarMeal(Meal x, List<DAL.Entities.Meals> ListOfMeals, string dietType)
         {
+            var list = GetList(ListOfMeals, dietType);
+
+            //foreach (var item in list)
+            //{
+            //    Debug.WriteLine(item);
+            //}
+
             var P = new List<double>();
             var ListOfID = new List<int>();
 
             DAL.Entities.Meals meal = null;
 
-            foreach (var y in ListOfMeals)
+            foreach (var y in list)
             {
                 P.Add(GetDistance(x, y));
                 ListOfID.Add(Convert.ToInt32(y.ID));
@@ -70,7 +78,7 @@ namespace Projekt
 
             var sortedList = SortedList(ListOfID, P);
 
-            foreach (var y in ListOfMeals)
+            foreach (var y in list)
             {
                 if(y.ID == sortedList[0])
                 {
@@ -109,5 +117,30 @@ namespace Projekt
             return listToSort;
         }
 
+        private static List<DAL.Entities.Meals> GetList(List<DAL.Entities.Meals> list, string dietType)
+        {
+            var result = new List<DAL.Entities.Meals>();
+
+            Debug.WriteLine(dietType);
+
+            if (dietType == "1")
+            {
+                foreach (var item in list)
+                    if (item.DietType == Properties.Resources.vegan || item.DietType == Properties.Resources.vegetarian)
+                        result.Add(item);
+            }
+            if (dietType == "2")
+            {
+                foreach (var item in list)
+                    if (item.DietType == Properties.Resources.vegan)
+                        result.Add(item);
+            }
+            if (dietType == "0")
+                return list;
+
+            //Debug.WriteLine($"{Properties.Resources.normal}, {Properties.Resources.vegetarian}, {Properties.Resources.vegan}");
+
+            return result;     
+        }
     }
 }

@@ -49,7 +49,8 @@
                                  VerticalAlignment="Center"
                                  BorderThickness="0"
                                  Foreground="#777777"
-                                 Background="Transparent"/>
+                                 Background="Transparent"
+                                 ToolTip="{x:Static resx:Resources.errorIsCorrectLogin}"/>
 
                         <Image Source="/Images/avatar.png"
                                Stretch="None"/>
@@ -79,7 +80,8 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      Foreground="#777777"
-                                     Background="Transparent"/>
+                                     Background="Transparent"
+                                     ToolTip="{x:Static resx:Resources.errorHasCorrectChars}"/>
 
                         <Image Source="/Images/lock.png"
                                Stretch="None"/>

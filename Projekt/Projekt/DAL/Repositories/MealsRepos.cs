@@ -66,5 +66,24 @@ namespace Projekt.DAL.Repositories
             }
             return condition;
         }
+
+        public static List<Entities.Meals> GetByLogin(string login)
+        {
+            List<Entities.Meals> meals = new List<Entities.Meals>();
+
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"SELECT M.* " +
+                    $"FROM MEALS M, DIET D " +
+                    $"WHERE D.LOGIN = '{login}' AND D.ID_MEALS = M.ID", connection);
+
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    meals.Add(new Entities.Meals(reader));
+                connection.Close();
+            }
+            return meals;
+        }
     }
 }
