@@ -22,8 +22,6 @@ namespace Projekt
 
         public Meals(int mealCount, double calories, int dietType, int goal, double weight)
         {
-            //int[] arr = calorieArray(mealCount, calories);
-
             var totalProteins = GetTotalProteins(goal, weight);
             var totalFat      = GetTotalFat(calories);
             var totalCarbs    = GetTotalCarbs(calories, totalProteins, totalFat);

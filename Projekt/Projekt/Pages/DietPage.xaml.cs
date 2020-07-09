@@ -1,26 +1,12 @@
 ﻿using Projekt.DAL.Entities;
 using Projekt.DAL.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Projekt.Pages
 {
-    /// <summary>
-    /// Logika interakcji dla klasy DietPage.xaml
-    /// </summary>
     public partial class DietPage : Page
     {
         public DietPage()
@@ -44,15 +30,6 @@ namespace Projekt.Pages
             Meals meals = new Meals(mealsCount, dailyCalories,
                    dietType, goal, weight);
 
-            //var ListOfMeal = MealsRepos.GetAll();
-
-            //foreach (var meal in ListOfMeal)
-            //{
-            //    Debug.WriteLine(meal);
-            //}
-
-            //meals.ListOfMeals.Add(new Meal(0, 10, 10, 10));
-            //meals.ListOfMeals.Add(new Meal(0, 0, 50, 100));
             var oneDay = meals.ListOfMeals;
 
             Debug.WriteLine("\n\n");

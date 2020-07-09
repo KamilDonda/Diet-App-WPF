@@ -1,24 +1,11 @@
-﻿using Projekt.DAL;
-using Projekt.DAL.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using Projekt.DAL.Repositories;
 using System.Diagnostics;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Projekt.Pages
 {
-    /// <summary>
-    /// Logika interakcji dla klasy RegisterPage.xaml
-    /// </summary>
     public partial class RegisterPage : Page
     {
         private string login;
@@ -37,23 +24,15 @@ namespace Projekt.Pages
             password = Password_textbox.Password;
             confirmPassword = ConfirmPassword_textbox.Password;
 
-            Debug.WriteLine(
-                $"\nLogin     {login}" +
-                $"\nPassword  {password}" +
-                $"\nConfirm   {confirmPassword}");
-
             LoginPage loginPage = new LoginPage();
 
             if (Login.IsPasswordCorrect(password, confirmPassword) &&
                 Login.IsCorrectLogin(login))
             {
                 hashPassword = Login.HashPassword(password);
-                Debug.WriteLine($"Hash  {hashPassword}");
-
                 try
                 {
                     UsersRepos.CreateUser(login, hashPassword);
-                    Debug.WriteLine("OK");
                 }
                 catch
                 {

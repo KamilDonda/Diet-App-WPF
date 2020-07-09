@@ -178,9 +178,24 @@
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="Center"/>
 
-                        <TextBox x:Name="IngredientName_textbox"
+                        <TextBox x:Name="IngredientID_textbox"
                                  VerticalAlignment="Center" 
                                  HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidationInt"
+                                 Width="60"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+
+                        <TextBlock Text="{x:Static resx:Resources.weightItem}"
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="IngredientWeight_textbox"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 PreviewTextInput="NumberValidation"
                                  Width="60"/>
 
                     </StackPanel>

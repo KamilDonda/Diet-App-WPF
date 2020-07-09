@@ -85,5 +85,7 @@ namespace Projekt.DAL.Entities
         {
             return $"{ID}, {Name}, {Weight}, {Kcal}, {Protein}, {Fat}, {Carbs}, {DietType}";
         }
+
+
     }
 }

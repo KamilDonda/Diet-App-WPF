@@ -1,27 +1,19 @@
 ﻿using Projekt.DAL.Entities;
 using Projekt.DAL.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Projekt.Pages
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MealsPage.xaml
-    /// </summary>
     public partial class MealsPage : Page
     {
+        private static int? MealID = null;
+        private static DAL.Entities.Meals MEAL;
+
         public MealsPage()
         {
             InitializeComponent();
@@ -41,22 +33,17 @@ namespace Projekt.Pages
             if(Login.LOGIN_STATUS)
                 Ingredient_stackpanel.IsEnabled = true;
 
-            //double Kcal = 0;
-            //double Prot = 0;
-            //double Fat = 0;
-            //double Carbs = 0;
-            //double Weight = 0;
+            try
+            {
+                var selectedMeal = (sender as ListView).SelectedItem as DAL.Entities.Meals;
+                if (selectedMeal != null && selectedMeal.ID > 34)
+                {
+                    MealID = Convert.ToInt32(selectedMeal.ID);
+                    MEAL = selectedMeal;
+                }
 
-            //for (int i = 0; i < ingredientsRepos.Count; i++)
-            //{
-            //    Kcal += ingredientsRepos[i].Kcal;
-            //    Prot += ingredientsRepos[i].Protein;
-            //    Fat += ingredientsRepos[i].Fat;
-            //    Carbs += ingredientsRepos[i].Carbs;
-            //    Weight += ingredientsRepos[i].Weight;
-            //}
-
-            //Debug.WriteLine($"{Kcal}, {Prot}, {Fat}, {Carbs}, {Weight}");
+            }
+            catch { }
         }
 
         private void Meal_button_Click(object sender, RoutedEventArgs e)
@@ -68,7 +55,25 @@ namespace Projekt.Pages
 
         private void Ingredient_button_Click(object sender, RoutedEventArgs e)
         {
+            if (MealID != null)
+            {
+                try
+                {
+                    var ingredientID = Convert.ToInt32(IngredientID_textbox.Text);
+                    var ingredientWeight = Convert.ToDouble(IngredientWeight_textbox.Text);
 
+                    ContainsRepos.Insert(new Contains(Convert.ToInt32(MealID), ingredientID, ingredientWeight));
+
+                    MealsRepos.UpdateMeals();
+                }
+                catch { }
+            }
+        }
+
+        private void NumberValidationInt(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void NumberValidation(object sender, TextCompositionEventArgs e)

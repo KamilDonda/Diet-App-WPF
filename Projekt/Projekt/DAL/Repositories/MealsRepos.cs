@@ -2,6 +2,8 @@
 using Projekt.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 
 namespace Projekt.DAL.Repositories
@@ -84,6 +86,52 @@ namespace Projekt.DAL.Repositories
                 connection.Close();
             }
             return meals;
+        }
+
+        public static void UpdateMeals()
+        {
+            var mealsRepos = GetAll();
+
+            foreach (var meal in mealsRepos)
+            {
+                var ingredientsRepos = IngredientsRepos.GetByID(meal.ID.Value);
+
+                int n = ingredientsRepos.Count;
+
+                int? ID = meal.ID;
+                string Name = meal.Name;
+                double Kcal = 0;
+                double Prot = 0;
+                double Fat = 0;
+                double Carbs = 0;
+                double Weight = 0;
+                var Type = new int[n];
+
+                for (int j = 0; j < n; j++)
+                {
+                    var weight = ingredientsRepos[j].Weight;
+
+                    Kcal += ingredientsRepos[j].Kcal * weight * 0.01;
+                    Prot += ingredientsRepos[j].Protein * weight * 0.01;
+                    Fat += ingredientsRepos[j].Fat * weight * 0.01;
+                    Carbs += ingredientsRepos[j].Carbs * weight * 0.01;
+                    Weight += ingredientsRepos[j].Weight;
+
+                    var t = ingredientsRepos[j].Type;
+
+                    if (t == Projekt.Properties.Resources.normal)
+                        Type[j] = 0;
+                    if (t == Projekt.Properties.Resources.vegetarian)
+                        Type[j] = 1;
+                    if (t == Projekt.Properties.Resources.vegan)
+                        Type[j] = 2;
+                }
+                var type = Type.Min().ToString();
+
+                var newMeal = new Entities.Meals(Name, Weight, Kcal, Prot, Fat, Carbs, type);
+
+                Update(newMeal, ID);
+            }
         }
     }
 }

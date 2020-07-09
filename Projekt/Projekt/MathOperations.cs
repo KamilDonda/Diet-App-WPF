@@ -60,11 +60,6 @@ namespace Projekt
         {
             var list = GetList(ListOfMeals, dietType);
 
-            //foreach (var item in list)
-            //{
-            //    Debug.WriteLine(item);
-            //}
-
             var P = new List<double>();
             var ListOfID = new List<int>();
 

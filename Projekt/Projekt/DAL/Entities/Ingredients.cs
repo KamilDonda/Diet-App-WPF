@@ -64,5 +64,10 @@ namespace Projekt.DAL.Entities
             var carbs = Carbs.ToString().Replace(',', '.');
             return $"('{ID}', '{Name}', '{kcal}', '{protein}', '{fat}', '{carbs}', '{Type}')";
         }
+
+        public override string ToString()
+        {
+            return $"'{ID}', '{Name}', '{Kcal}', '{Protein}', '{Fat}', '{Carbs}', '{Type}'";
+        }
     } 
 }

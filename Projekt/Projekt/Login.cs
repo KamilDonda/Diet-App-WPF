@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Linq;
-using MySqlX.XDevAPI.Common;
 using System.Security.Cryptography;
 using Projekt.DAL.Repositories;
 using Projekt.DAL.Entities;

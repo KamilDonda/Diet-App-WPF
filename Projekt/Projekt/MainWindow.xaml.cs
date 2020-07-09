@@ -26,7 +26,6 @@ namespace Projekt
             MouseDown += Window_MouseDown;
 
             Main.Content = new LoginPage();
-            //PageList.Add(Main.Content);
         }
 
         private List<Object> PageList = new List<Object>();
